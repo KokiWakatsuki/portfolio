@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col justify-between items-center p-6 min-h-screen w-full bg-gradient-to-b from-[#1A120B] to-[#3C2A21]">
+      <body className="flex flex-col justify-between items-center min-h-screen w-full">
         {children}
       </body>
     </html>
