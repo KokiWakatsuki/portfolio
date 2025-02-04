@@ -1,16 +1,16 @@
 import {
     siGithub,
     siDocker,
-    siNextdotjs,  // Next.js
+    siNextdotjs,
     siReact,
-    siVuedotjs,      // Vue.js
-    siHtml5,      // HTML5
-    siCss3,       // CSS3
+    siVuedotjs,
+    siHtml5,
+    siCss3,
     siFlutter,
     siTypescript,
     siJavascript,
     siLaravel,
-    siRubyonrails, // Ruby on Rails
+    siRubyonrails,
     siPython,
     siC,
     siPostgresql,
@@ -57,7 +57,6 @@ export const Skill = () => {
 
     return (
         <div>
-            <h1>Skill</h1>
             <div>Frontend</div>
             <div className='flex flex-row'>
             {front_icons.map((icon, index) => (
@@ -66,7 +65,7 @@ export const Skill = () => {
                     style={{
                         width: '50px',
                         height: '50px',
-                        fill: 'white'  // ここで色を指定
+                        fill: '#E5E5CB'
                     }}
                     dangerouslySetInnerHTML={{ __html: icon.svg }}
                     className='m-1'
@@ -81,7 +80,7 @@ export const Skill = () => {
                     style={{
                         width: '50px',
                         height: '50px',
-                        fill: 'white'  // ここで色を指定
+                        fill: '#E5E5CB'
                     }}
                     dangerouslySetInnerHTML={{ __html: icon.svg }}
                     className='m-1'
@@ -96,7 +95,7 @@ export const Skill = () => {
                     style={{
                         width: '50px',
                         height: '50px',
-                        fill: 'white'  // ここで色を指定
+                        fill: '#E5E5CB'
                     }}
                     dangerouslySetInnerHTML={{ __html: icon.svg }}
                     className='m-1'
@@ -111,7 +110,7 @@ export const Skill = () => {
                     style={{
                         width: '50px',
                         height: '50px',
-                        fill: 'white'  // ここで色を指定
+                        fill: '#E5E5CB'
                     }}
                     dangerouslySetInnerHTML={{ __html: icon.svg }}
                     className='m-1'

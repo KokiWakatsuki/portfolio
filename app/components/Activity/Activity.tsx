@@ -1,7 +1,6 @@
 export const Activity = () => {
     return (
         <div>
-            <h1>Activity</h1>
             <p>
                 長岡工業高等専門学校 電子制御工学科 卒
             </p>

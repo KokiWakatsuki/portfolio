@@ -14,7 +14,6 @@ export const Contact = () => {
       ];
     return (
         <div>
-            <h1>Contact</h1>
             <div className='flex flex-row'>
                 {front_icons.map((icon, index) => (
                     <div
@@ -22,7 +21,7 @@ export const Contact = () => {
                         style={{
                             width: '50px',
                             height: '50px',
-                            fill: 'white'  // ここで色を指定
+                            fill: '#E5E5CB'
                         }}
                         dangerouslySetInnerHTML={{ __html: icon.svg }}
                         className='m-1'
