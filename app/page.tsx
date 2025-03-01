@@ -6,10 +6,12 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Skill } from "./components/Skill/Skill";
 import { Work } from "./components/Work/Work";
+import SolarSystem from "./components/SolarSystem/SolarSystem";
 
 export default function Home() {
     return (
         <div className='flex flex-col gap-40 justify-center items-center'>
+            <SolarSystem />
             <Header />
             <div id="about">
                 <Card title='About'>
