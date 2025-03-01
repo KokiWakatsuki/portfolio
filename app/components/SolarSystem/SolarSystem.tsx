@@ -19,7 +19,7 @@ const SolarSystem: React.FC = () => {
     const wireMaterial = new THREE.LineBasicMaterial({ color: 0xaaaaaa });
     const accentWireMaterial = new THREE.LineBasicMaterial({ color: 0xcccccc });
 
-    const sunGeometry = new THREE.IcosahedronGeometry(15, 3);
+    const sunGeometry = new THREE.IcosahedronGeometry(60, 3);
     const sunWireframe = new THREE.LineSegments(
       new THREE.WireframeGeometry(sunGeometry),
       accentWireMaterial
@@ -27,14 +27,14 @@ const SolarSystem: React.FC = () => {
     scene.add(sunWireframe);
 
     const planets = [
-      { radius: 3, distance: 40, speed: 0.02, detail: 1 },
-      { radius: 5, distance: 70, speed: 0.015, detail: 1 },
-      { radius: 4, distance: 100, speed: 0.01, detail: 1 },
-      { radius: 6, distance: 140, speed: 0.008, detail: 1 },
-      { radius: 8, distance: 190, speed: 0.006, detail: 1 },
-      { radius: 7, distance: 240, speed: 0.004, detail: 1 },
-      { radius: 4, distance: 280, speed: 0.003, detail: 1 },
-      { radius: 3.5, distance: 320, speed: 0.002, detail: 1 }
+      { radius: 12, distance: 120, speed: 0.02, detail: 1 },
+      { radius: 20, distance: 180, speed: 0.015, detail: 1 },
+      { radius: 16, distance: 240, speed: 0.01, detail: 1 },
+      { radius: 24, distance: 300, speed: 0.008, detail: 1 },
+      { radius: 32, distance: 380, speed: 0.006, detail: 1 },
+      { radius: 28, distance: 460, speed: 0.004, detail: 1 },
+      { radius: 16, distance: 540, speed: 0.003, detail: 1 },
+      { radius: 14, distance: 620, speed: 0.002, detail: 1 }
     ];
 
     const starsGeometry = new THREE.BufferGeometry();
@@ -126,7 +126,7 @@ const SolarSystem: React.FC = () => {
       sunWireframe.rotation.x += 0.001;
 
       const time = Date.now() * 0.00005;
-      const radius = 500;
+      const radius = 700;
       camera.position.x = Math.cos(time) * radius;
       camera.position.z = Math.sin(time) * radius;
       camera.position.y = 200 + Math.sin(time * 0.5) * 100;
