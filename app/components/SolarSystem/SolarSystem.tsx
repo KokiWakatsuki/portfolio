@@ -16,25 +16,35 @@ const SolarSystem: React.FC = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
 
-    const wireMaterial = new THREE.LineBasicMaterial({ color: 0xaaaaaa });
-    const accentWireMaterial = new THREE.LineBasicMaterial({ color: 0xcccccc });
+    // 太陽と惑星の色を定義
+    const planetColors = [
+      0xffe0b3, // 太陽：暖かみのある白色
+      0xc0c0c0, // 水星：シルバーグレー
+      0xf2e6d9, // 金星：ソフトクリーム
+      0x9dc3c2, // 地球：淡い青緑
+      0xb97a57, // 火星：くすんだ赤茶
+      0xd4a76a, // 木星：アンバー
+      0xdac17c, // 土星：シャンパンゴールド
+      0xb3d9d9, // 天王星：ペールブルー
+      0x394d6e  // 海王星：ディープブルー
+    ];
 
-    const sunGeometry = new THREE.IcosahedronGeometry(15, 3);
+    const sunGeometry = new THREE.IcosahedronGeometry(60, 3);
     const sunWireframe = new THREE.LineSegments(
       new THREE.WireframeGeometry(sunGeometry),
-      accentWireMaterial
+      new THREE.LineBasicMaterial({ color: planetColors[0] })
     );
     scene.add(sunWireframe);
 
     const planets = [
-      { radius: 3, distance: 40, speed: 0.02, detail: 1 },
-      { radius: 5, distance: 70, speed: 0.015, detail: 1 },
-      { radius: 4, distance: 100, speed: 0.01, detail: 1 },
-      { radius: 6, distance: 140, speed: 0.008, detail: 1 },
-      { radius: 8, distance: 190, speed: 0.006, detail: 1 },
-      { radius: 7, distance: 240, speed: 0.004, detail: 1 },
-      { radius: 4, distance: 280, speed: 0.003, detail: 1 },
-      { radius: 3.5, distance: 320, speed: 0.002, detail: 1 }
+      { radius: 8, distance: 120, speed: 0.025, detail: 2 },    // 水星: 小さく高速
+      { radius: 18, distance: 180, speed: 0.018, detail: 2 },   // 金星: やや大きめ
+      { radius: 20, distance: 240, speed: 0.015, detail: 2 },   // 地球: バランスの取れたサイズ
+      { radius: 15, distance: 300, speed: 0.012, detail: 2 },   // 火星: 中型
+      { radius: 45, distance: 380, speed: 0.008, detail: 3 },   // 木星: 特大
+      { radius: 35, distance: 460, speed: 0.006, detail: 3 },   // 土星: 大型
+      { radius: 25, distance: 540, speed: 0.004, detail: 2 },   // 天王星: 中大型
+      { radius: 24, distance: 620, speed: 0.003, detail: 2 }    // 海王星: 中大型
     ];
 
     const starsGeometry = new THREE.BufferGeometry();
@@ -63,15 +73,18 @@ const SolarSystem: React.FC = () => {
 
     const planetObjects = planets.map(planet => {
       const geometry = new THREE.IcosahedronGeometry(planet.radius, 2);
+      const planetColor = planetColors[planets.indexOf(planet) + 1]; // +1 because index 0 is sun
       const wireframe = new THREE.LineSegments(
         new THREE.WireframeGeometry(geometry),
-        wireMaterial
+        new THREE.LineBasicMaterial({ color: planetColor })
       );
 
       const orbitGeometry = new THREE.BufferGeometry();
       const orbitPoints = [];
       const segments = 128;
-      const eccentricity = Math.random() * 0.1;
+      // 惑星ごとの離心率を設定
+      const eccentricities = [0.15, 0.12, 0.08, 0.14, 0.05, 0.1, 0.09, 0.07];
+      const eccentricity = eccentricities[planets.indexOf(planet)];
 
       for (let i = 0; i <= segments; i++) {
         const angle = (i / segments) * Math.PI * 2;
@@ -95,8 +108,9 @@ const SolarSystem: React.FC = () => {
         distance: planet.distance,
         speed: planet.speed * 0.5,
         angle: Math.random() * Math.PI * 2,
-        verticalOffset: Math.random() * 0.3,
-        rotationSpeed: planet.speed * 3
+        // 惑星ごとの特徴的な傾きと自転速度を設定
+        verticalOffset: [0.1, 0.15, 0.2, 0.25, 0.15, 0.4, 0.8, 0.3][planets.indexOf(planet)],
+        rotationSpeed: [-0.01, -0.008, 0.015, 0.012, 0.025, 0.02, 0.018, 0.016][planets.indexOf(planet)]
       };
     });
 
@@ -126,7 +140,7 @@ const SolarSystem: React.FC = () => {
       sunWireframe.rotation.x += 0.001;
 
       const time = Date.now() * 0.00005;
-      const radius = 500;
+      const radius = 700;
       camera.position.x = Math.cos(time) * radius;
       camera.position.z = Math.sin(time) * radius;
       camera.position.y = 200 + Math.sin(time * 0.5) * 100;
