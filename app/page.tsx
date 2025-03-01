@@ -10,35 +10,53 @@ import SolarSystem from "./components/SolarSystem/SolarSystem";
 
 export default function Home() {
     return (
-        <div className='flex flex-col gap-40 justify-center items-center'>
-            <SolarSystem />
-            <Header />
-            <div id="about">
-                <Card title='About'>
-                    <About />
-                </Card>
+        <main>
+            <div className='fixed top-0 left-0 w-full h-full -z-10'>
+                <SolarSystem />
             </div>
-            <div id="work">
-                <Card title='Work'>
-                    <Work />
-                </Card>
+            <div className="fixed top-0 left-0 w-full z-50">
+                <Header />
             </div>
-            <div id="skill">
-                <Card title='Skill'>
-                    <Skill />
-                </Card>
+            <div className='snap-y snap-mandatory h-screen overflow-y-auto'>
+                <section className='snap-start h-screen flex items-center justify-center'>
+                    <div id="about">
+                        <Card title='About'>
+                            <About />
+                        </Card>
+                    </div>
+                </section>
+                <section className='snap-start h-screen flex items-center justify-center'>
+                    <div id="work">
+                        <Card title='Work'>
+                            <Work />
+                        </Card>
+                    </div>
+                </section>
+                <section className='snap-start h-screen flex items-center justify-center'>
+                    <div id="skill">
+                        <Card title='Skill'>
+                            <Skill />
+                        </Card>
+                    </div>
+                </section>
+                <section className='snap-start h-screen flex items-center justify-center'>
+                    <div id="activity">
+                        <Card title='Activity'>
+                            <Activity />
+                        </Card>
+                    </div>
+                </section>
+                <section className='snap-start h-screen flex items-center justify-center'>
+                    <div id="contact">
+                        <Card title='Contact'>
+                            <Contact />
+                        </Card>
+                    </div>
+                </section>
             </div>
-            <div id="activity">
-                <Card title='Activity'>
-                    <Activity />
-                </Card>
+            <div className="fixed bottom-0 left-0 w-full z-50">
+                <Footer />
             </div>
-            <div id="contact">
-                <Card title='Contact'>
-                    <Contact />
-                </Card>
-            </div>
-            <Footer />
-        </div>
+        </main>
     );
 }
