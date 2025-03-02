@@ -18,35 +18,35 @@ export default function Home() {
                 <Header />
             </div>
             <div className='snap-y snap-mandatory h-screen overflow-y-auto'>
-                <section className='snap-start h-screen flex items-center justify-center'>
+                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
                     <div id="about">
                         <Card title='About'>
                             <About />
                         </Card>
                     </div>
                 </section>
-                <section className='snap-start h-screen flex items-center justify-center'>
+                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
                     <div id="work">
                         <Card title='Work'>
                             <Work />
                         </Card>
                     </div>
                 </section>
-                <section className='snap-start h-screen flex items-center justify-center'>
+                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
                     <div id="skill">
                         <Card title='Skill'>
                             <Skill />
                         </Card>
                     </div>
                 </section>
-                <section className='snap-start h-screen flex items-center justify-center'>
+                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
                     <div id="activity">
                         <Card title='Activity'>
                             <Activity />
                         </Card>
                     </div>
                 </section>
-                <section className='snap-start h-screen flex items-center justify-center'>
+                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
                     <div id="contact">
                         <Card title='Contact'>
                             <Contact />

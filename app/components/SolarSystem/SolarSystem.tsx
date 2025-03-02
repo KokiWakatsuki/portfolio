@@ -9,9 +9,22 @@ const SolarSystem: React.FC = () => {
   useEffect(() => {
     if (!mountRef.current) return;
 
+    // デバイスの性能に応じてスケーリングファクターを設定
+    const isMobile = window.innerWidth < 768;
+    const scaleFactor = isMobile ? 0.6 : 1;
+    const starCount = isMobile ? 2500 : 5000;
+
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 3000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    const camera = new THREE.PerspectiveCamera(
+      isMobile ? 75 : 60,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      3000
+    );
+    const renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: !isMobile // モバイルではアンチエイリアスを無効化してパフォーマンス向上
+    });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
@@ -29,27 +42,34 @@ const SolarSystem: React.FC = () => {
       0x394d6e  // 海王星：ディープブルー
     ];
 
-    const sunGeometry = new THREE.IcosahedronGeometry(60, 3);
+    const sunGeometry = new THREE.IcosahedronGeometry(60 * scaleFactor, isMobile ? 2 : 3);
     const sunWireframe = new THREE.LineSegments(
       new THREE.WireframeGeometry(sunGeometry),
       new THREE.LineBasicMaterial({ color: planetColors[0] })
     );
     scene.add(sunWireframe);
 
-    const planets = [
-      { radius: 8, distance: 120, speed: 0.025, detail: 2 },    // 水星: 小さく高速
-      { radius: 18, distance: 180, speed: 0.018, detail: 2 },   // 金星: やや大きめ
-      { radius: 20, distance: 240, speed: 0.015, detail: 2 },   // 地球: バランスの取れたサイズ
-      { radius: 15, distance: 300, speed: 0.012, detail: 2 },   // 火星: 中型
-      { radius: 45, distance: 380, speed: 0.008, detail: 3 },   // 木星: 特大
-      { radius: 35, distance: 460, speed: 0.006, detail: 3 },   // 土星: 大型
-      { radius: 25, distance: 540, speed: 0.004, detail: 2 },   // 天王星: 中大型
-      { radius: 24, distance: 620, speed: 0.003, detail: 2 }    // 海王星: 中大型
+    const basePlanets = [
+      { radius: 8, distance: 120, speed: 0.025, detail: 2 },    // 水星
+      { radius: 18, distance: 180, speed: 0.018, detail: 2 },   // 金星
+      { radius: 20, distance: 240, speed: 0.015, detail: 2 },   // 地球
+      { radius: 15, distance: 300, speed: 0.012, detail: 2 },   // 火星
+      { radius: 45, distance: 380, speed: 0.008, detail: 3 },   // 木星
+      { radius: 35, distance: 460, speed: 0.006, detail: 3 },   // 土星
+      { radius: 25, distance: 540, speed: 0.004, detail: 2 },   // 天王星
+      { radius: 24, distance: 620, speed: 0.003, detail: 2 }    // 海王星
     ];
+
+    const planets = basePlanets.map(planet => ({
+      ...planet,
+      radius: planet.radius * scaleFactor,
+      distance: planet.distance * scaleFactor,
+      detail: isMobile ? Math.min(planet.detail, 2) : planet.detail
+    }));
 
     const starsGeometry = new THREE.BufferGeometry();
     const starsVertices = [];
-    for (let i = 0; i < 5000; i++) {
+    for (let i = 0; i < starCount; i++) {
       const radius = Math.random() * 1000 + 500;
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.random() * Math.PI * 2;
@@ -139,11 +159,14 @@ const SolarSystem: React.FC = () => {
       sunWireframe.rotation.y += 0.002;
       sunWireframe.rotation.x += 0.001;
 
-      const time = Date.now() * 0.00005;
-      const radius = 700;
+      const time = Date.now() * (isMobile ? 0.00003 : 0.00005);
+      const radius = isMobile ? 500 : 700;
+      const yOffset = isMobile ? 100 : 200;
+      const yAmplitude = isMobile ? 50 : 100;
+      
       camera.position.x = Math.cos(time) * radius;
       camera.position.z = Math.sin(time) * radius;
-      camera.position.y = 200 + Math.sin(time * 0.5) * 100;
+      camera.position.y = yOffset + Math.sin(time * 0.5) * yAmplitude;
       camera.lookAt(0, 0, 0);
 
       renderer.render(scene, camera);
@@ -152,6 +175,8 @@ const SolarSystem: React.FC = () => {
     animate();
 
     const handleResize = () => {
+      const newIsMobile = window.innerWidth < 768;
+      camera.fov = newIsMobile ? 75 : 60;
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);

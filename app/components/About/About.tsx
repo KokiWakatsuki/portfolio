@@ -29,7 +29,7 @@ export const About = () => {
         <div 
             ref={ref}
             className={`
-                max-w-4xl mx-auto p-8 
+                max-w-4xl mx-auto p-4 sm:p-6 md:p-8
                 bg-white/5 backdrop-blur-md 
                 rounded-2xl border border-white/10 
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]
@@ -38,11 +38,11 @@ export const About = () => {
             `}
         >
             {/* Academic Background */}
-            <div className="mb-8 transition-all duration-500 hover:translate-x-2">
-                <h3 className="text-lg font-semibold mb-2 text-white/90">
+            <div className="mb-6 sm:mb-8 transition-all duration-500 hover:translate-x-2">
+                <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-white/90">
                     学歴
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                     長岡工業高等専門学校 電子制御工学科 卒<br />
                     長岡技術科学大学 工学部 情報・経営システム工学専攻 1年<br />
                     機械学習理論研究室所属
@@ -50,11 +50,11 @@ export const About = () => {
             </div>
 
             {/* Activities */}
-            <div className="mb-8 transition-all duration-500 hover:translate-x-2">
-                <h3 className="text-lg font-semibold mb-2 text-white/90">
+            <div className="mb-6 sm:mb-8 transition-all duration-500 hover:translate-x-2">
+                <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-white/90">
                     活動
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                     技大祭実行委員会所属<br />
                     第43回技大祭実行委員会情報局長<br />
                     NUTMEG元代表
@@ -63,10 +63,10 @@ export const About = () => {
 
             {/* Description */}
             <div className="transition-all duration-500 hover:translate-x-2">
-                <h3 className="text-lg font-semibold mb-2 text-white/90">
+                <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-white/90">
                     情報局について
                 </h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                     技大祭実行委員会の情報局に所属しています。<br />
                     情報局は「技大祭を円滑に」というMissionのもと、学祭をDXしている学生団体です。<br />
                     この情報局で培った開発スキル・マネジメントスキルを活かして、様々なことに挑戦しています。

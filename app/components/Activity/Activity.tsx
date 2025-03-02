@@ -58,7 +58,7 @@ export const Activity = () => {
         <div 
             ref={ref}
             className={`
-                w-full max-w-7xl mx-auto p-8
+                w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8
                 bg-white/5 backdrop-blur-md
                 rounded-2xl border border-white/10
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]
@@ -71,33 +71,33 @@ export const Activity = () => {
                 <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-white/20 via-white/10 to-transparent" />
 
                 {/* アクティビティアイテム */}
-                <div className="space-y-12">
+                <div className="space-y-8 sm:space-y-10 md:space-y-12">
                     {activities.map((activity, index) => (
-                        <div 
+                        <div
                             key={index}
                             className={`
-                                relative pl-8
+                                relative pl-6 sm:pl-8
                                 transition-all duration-700 ease-out
                                 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}
                             `}
                             style={{ transitionDelay: `${index * 200}ms` }}
                         >
                             {/* タイムラインのドット */}
-                            <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-white/80" />
+                            <div className="absolute left-[-4px] sm:left-[-5px] top-2 w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-white/80" />
                             
                             <div className="group hover:translate-x-2 transition-transform duration-300">
                                 {/* 期間 */}
-                                <div className="text-sm text-white/60 mb-1">
+                                <div className="text-xs sm:text-sm text-white/60 mb-1">
                                     {activity.period}
                                 </div>
                                 
                                 {/* タイトル */}
-                                <h3 className="text-lg font-semibold text-white/90 mb-2">
+                                <h3 className="text-base sm:text-lg font-semibold text-white/90 mb-1 sm:mb-2">
                                     {activity.title}
                                 </h3>
                                 
                                 {/* 説明文 */}
-                                <p className="text-gray-300 leading-relaxed">
+                                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                                     {activity.description}
                                 </p>
                             </div>
