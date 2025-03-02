@@ -1,15 +1,56 @@
+"use client";
+
 import { WorkCardProps } from "@/app/types";
-import { FC } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
 
-export const WorkCard: FC<WorkCardProps> = ({title, description, link, img_link  }) => {
+export const WorkCard: FC<WorkCardProps> = ({title, description, link, img_link}) => {
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
-        <div className="flex flex-col items-center justify-center w-400 h-auto p-4 bg-primary rounded-lg shadow-lg shadow-white/40 gap-4">
-            <h1 className="text-2xl font-semibold text-foreground">{title}</h1>
-            <p className="text-base text-foreground">{description}</p>
-            <a href={link} target="_blank" rel="noreferrer" className="text-base text-accent">
-                <Image src={img_link} alt='img' width={500} height={500} />
+        <div 
+            className={`
+                group
+                flex flex-col items-center justify-start
+                w-full max-w-md h-auto p-6
+                bg-white/5 backdrop-blur-md
+                rounded-xl border border-white/10
+                shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]
+                transition-all duration-500 ease-out
+                hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]
+                hover:-translate-y-2
+            `}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <h1 className="text-2xl font-light text-white/90 mb-4">{title}</h1>
+            <p className="text-base text-gray-300 mb-6 text-center leading-relaxed">{description}</p>
+            <a 
+                href={link} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="relative w-full overflow-hidden rounded-lg"
+            >
+                <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+                    <Image 
+                        src={img_link} 
+                        alt={title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className={`
+                            transition-all duration-500 ease-out
+                            group-hover:scale-105
+                            ${isHovered ? 'brightness-110' : 'brightness-90'}
+                        `}
+                    />
+                    <div className={`
+                        absolute inset-0 
+                        bg-gradient-to-t from-black/50 to-transparent
+                        transition-opacity duration-500
+                        ${isHovered ? 'opacity-0' : 'opacity-100'}
+                    `} />
+                </div>
             </a>
         </div>
     );
-}
+};
