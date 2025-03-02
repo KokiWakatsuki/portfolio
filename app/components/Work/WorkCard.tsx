@@ -12,7 +12,7 @@ export const WorkCard: FC<WorkCardProps> = ({title, description, link, img_link}
             className={`
                 group
                 flex flex-col items-center justify-start
-                w-full max-w-md h-auto p-6
+                w-full max-w-md h-auto p-4 sm:p-5 md:p-6
                 bg-white/5 backdrop-blur-md
                 rounded-xl border border-white/10
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]
@@ -23,8 +23,8 @@ export const WorkCard: FC<WorkCardProps> = ({title, description, link, img_link}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <h1 className="text-2xl font-light text-white/90 mb-4">{title}</h1>
-            <p className="text-base text-gray-300 mb-6 text-center leading-relaxed">{description}</p>
+            <h1 className="text-xl sm:text-2xl font-light text-white/90 mb-3 sm:mb-4">{title}</h1>
+            <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 text-center leading-relaxed">{description}</p>
             <a 
                 href={link} 
                 target="_blank" 

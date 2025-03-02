@@ -30,12 +30,12 @@ export const Work = () => {
         <div 
             ref={ref}
             className={`
-                w-full max-w-7xl mx-auto px-6
+                w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
                 transition-all duration-1000 ease-out
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
             `}
         >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
                 <WorkCard 
                     title="Group-Manager-2" 
                     description="技大祭参加団体の管理をDXするWebアプリケーション。

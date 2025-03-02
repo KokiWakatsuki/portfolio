@@ -25,6 +25,18 @@ body {
     padding: 0 1rem;
 }
 
+@media (min-width: 640px) {
+    body {
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding: 0 4rem;
+    }
+}
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;
