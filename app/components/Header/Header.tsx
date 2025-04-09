@@ -42,20 +42,20 @@ export const Header = () => {
                         <span>ABOUT</span>
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="#skill" className='cursor-pointer transition-all duration-300 hover:text-white relative group text-gray-300'>
-                        <span>SKILL</span>
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
                     <Link href="#work" className='cursor-pointer transition-all duration-300 hover:text-white relative group text-gray-300'>
                         <span>WORKS</span>
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-                    <Link href="#contact" className='cursor-pointer transition-all duration-300 hover:text-white relative group text-gray-300'>
-                        <span>CONTACT</span>
+                    <Link href="#skill" className='cursor-pointer transition-all duration-300 hover:text-white relative group text-gray-300'>
+                        <span>SKILL</span>
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                     <Link href="#activity" className='cursor-pointer transition-all duration-300 hover:text-white relative group text-gray-300'>
                         <span>ACTIVITY</span>
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                    <Link href="#contact" className='cursor-pointer transition-all duration-300 hover:text-white relative group text-gray-300'>
+                        <span>CONTACT</span>
                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white/50 transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                 </nav>
@@ -81,17 +81,17 @@ export const Header = () => {
                         <Link href="#about" className='cursor-pointer transition-all duration-300 hover:text-white text-gray-300' onClick={toggleMenu}>
                             ABOUT
                         </Link>
-                        <Link href="#skill" className='cursor-pointer transition-all duration-300 hover:text-white text-gray-300' onClick={toggleMenu}>
-                            SKILL
-                        </Link>
                         <Link href="#work" className='cursor-pointer transition-all duration-300 hover:text-white text-gray-300' onClick={toggleMenu}>
                             WORKS
                         </Link>
-                        <Link href="#contact" className='cursor-pointer transition-all duration-300 hover:text-white text-gray-300' onClick={toggleMenu}>
-                            CONTACT
+                        <Link href="#skill" className='cursor-pointer transition-all duration-300 hover:text-white text-gray-300' onClick={toggleMenu}>
+                            SKILL
                         </Link>
                         <Link href="#activity" className='cursor-pointer transition-all duration-300 hover:text-white text-gray-300' onClick={toggleMenu}>
                             ACTIVITY
+                        </Link>
+                        <Link href="#contact" className='cursor-pointer transition-all duration-300 hover:text-white text-gray-300' onClick={toggleMenu}>
+                            CONTACT
                         </Link>
                     </div>
                 </nav>

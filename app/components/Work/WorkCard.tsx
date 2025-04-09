@@ -4,7 +4,7 @@ import { WorkCardProps } from "@/app/types";
 import { FC, useState } from "react";
 import Image from "next/image";
 
-export const WorkCard: FC<WorkCardProps> = ({title, description, link, img_link}) => {
+export const WorkCard: FC<WorkCardProps> = ({title, description, role, link, img_link}) => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -24,7 +24,10 @@ export const WorkCard: FC<WorkCardProps> = ({title, description, link, img_link}
             onMouseLeave={() => setIsHovered(false)}
         >
             <h1 className="text-xl sm:text-2xl font-light text-white/90 mb-3 sm:mb-4">{title}</h1>
-            <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 text-center leading-relaxed">{description}</p>
+            <div className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 text-center leading-relaxed">
+                <p>{description}</p>
+                {role && <p className="mt-2 text-indigo-400">{role}</p>}
+            </div>
             <a 
                 href={link} 
                 target="_blank" 

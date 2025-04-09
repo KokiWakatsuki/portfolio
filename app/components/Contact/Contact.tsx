@@ -46,23 +46,23 @@ export const Contact = () => {
     const contact_links: ContactLink[] = [
         {
             icon: siGithub,
-            href: "https://github.com/koki-fore",
+            href: "https://github.com/kokiWakatsuki",
             label: "GitHub",
         },
         {
             icon: siX,
-            href: "https://twitter.com/koki_fore",
+            href: "https://x.com/koki_wakatsuki",
             label: "Twitter/X",
         },
         {
             icon: siInstagram,
-            href: "https://www.instagram.com/koki_fore",
+            href: "https://www.instagram.com/wkt.__.k25",
             label: "Instagram",
         },
         {
             icon: siGmail,
-            href: "mailto:kokifore@gmail.com",
-            label: "Email",
+            href: "mailto:02.k.wakatsuki@gmail.com",
+            label: "Gmail",
         },
     ];
 
@@ -78,10 +78,6 @@ export const Contact = () => {
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
             `}
         >
-            <h2 className="text-2xl font-light text-white/90 text-center mb-8">
-                Let&apos;s Connect
-            </h2>
-            
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {contact_links.map((link, index) => (
                     <a
@@ -116,10 +112,6 @@ export const Contact = () => {
                     </a>
                 ))}
             </div>
-
-            <p className="text-center text-gray-400 mt-8">
-                お気軽にご連絡ください
-            </p>
         </div>
     );
 };

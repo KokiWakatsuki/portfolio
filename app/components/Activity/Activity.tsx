@@ -5,30 +5,49 @@ import { useEffect, useRef, useState } from 'react';
 interface ActivityItem {
     period: string;
     title: string;
-    description: string;
 }
 
 const activities: ActivityItem[] = [
     {
-        period: "2018.04 - 2023.03",
-        title: "長岡工業高等専門学校",
-        description: "電子制御工学科で組込みシステムやプログラミングを学び、ロボット制御や電子回路の設計などの実践的なスキルを習得。また、プログラミング部に所属し、技術力の向上に励みました。",
+        period: "2018.04",
+        title: "長岡工業高等専門学校入学",
     },
     {
-        period: "2023.04 - 現在",
-        title: "長岡技術科学大学",
-        description: "情報・経営システム工学専攻で、より高度な情報技術と経営の知識を学習。機械学習理論研究室に所属し、最新のAI技術について研究しています。",
+        period: "2021.07",
+        title: "SPRIX Engineering Lab アルバイト",
     },
     {
-        period: "2023.10 - 2024.09",
-        title: "第43回技大祭実行委員会",
-        description: "情報局長として、学園祭の運営に必要なシステムの開発・保守を担当。チームマネジメントやプロジェクト管理のスキルを実践的に習得しています。",
+        period: "2023.04",
+        title: "長岡技術科学大学入学",
     },
     {
-        period: "2023.04 - 現在",
-        title: "NUTMEG",
-        description: "技大祭実行委員会の情報局から派生した学生団体で、大学のDX推進に貢献。実践的な開発経験を積みながら、新しい技術にも積極的に挑戦しています。",
-    }
+        period: "2023.04",
+        title: "技大祭実行委員会情報局（NUTMEG）",
+    },
+    {
+        period: "2023.09",
+        title: "機械学習理論研究室配属",
+    },
+    {
+        period: "2023.10",
+        title: "第43回技大祭実行委員会情報局長（NUTMEG代表）",
+    },
+    {
+        period: "2023.10",
+        title: "株式会社プロッセル アルバイト",
+    },
+    {
+        period: "2024.12",
+        title: "株式会社清新会 アルバイト",
+    },
+    {
+        period: "2025.3",
+        title: "第87回情報処理学会",
+    },
+    {
+        period: "2025.4",
+        title: "長岡技術科学大学大学院入学",
+    },
 ];
 
 export const Activity = () => {
@@ -95,11 +114,6 @@ export const Activity = () => {
                                 <h3 className="text-base sm:text-lg font-semibold text-white/90 mb-1 sm:mb-2">
                                     {activity.title}
                                 </h3>
-                                
-                                {/* 説明文 */}
-                                <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                                    {activity.description}
-                                </p>
                             </div>
                         </div>
                     ))}

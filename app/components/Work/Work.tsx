@@ -36,21 +36,33 @@ export const Work = () => {
             `}
         >
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
-                <WorkCard 
-                    title="Group-Manager-2" 
-                    description="技大祭参加団体の管理をDXするWebアプリケーション。
-                    Dockerを用いて開発環境を整備し、Ruby on RailsとNext.jsを使用して開発を行いました。
-                    フロントエンドからインフラまで幅広く担当し、チームでの開発経験を積むことができました。" 
-                    link="https://github.com/NUTFes/group-manager-2" 
-                    img_link="/gm2.png" 
+                <WorkCard
+                    title="Group-Manager-2"
+                    description="技大祭で出展する参加団体を管理"
+                    role="担当：フロント・バック"
+                    link="https://github.com/NUTFes/group-manager-2"
+                    img_link="/gm2.png"
+                />
+                <WorkCard
+                    title="NUTMEG-Seeds"
+                    description="情報局内の学習記録を蓄積"
+                    role="担当：フロント・バック"
+                    link="https://github.com/NUTFes/nutmeg-seeds"
+                    img_link="/seeds.png"
+                />
+                <WorkCard
+                    title="SeeFT"
+                    description="技大祭当日のシフトを管理"
+                    role="担当：フロント・バック・デザイン"
+                    link="https://github.com/NUTFes/seeft"
+                    img_link="/seeft.png"
                 />
                 <WorkCard 
-                    title="NUTMEG-Seeds" 
-                    description="技大祭実行委員向けのタスク管理アプリケーション。
-                    Next.js, Supabase, Chakra UIを使用し、モダンな技術スタックでの開発に挑戦しました。
-                    プロジェクトリーダーとして、設計から実装まで主導的な役割を担いました。" 
-                    link="https://github.com/NUTFes/seeds" 
-                    img_link="/seeds.png" 
+                    title="sporty" 
+                    description="長岡高専の卒業研究で銅賞を受賞" 
+                    role='個人開発'
+                    link="https://github.com/kokiWakatsuki/sporty" 
+                    img_link="/sporty.jpg" 
                 />
             </div>
         </div>
