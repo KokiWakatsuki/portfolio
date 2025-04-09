@@ -44,7 +44,7 @@ export const About = () => {
                 </h3>
                 <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                     長岡工業高等専門学校 電子制御工学科 卒<br />
-                    長岡技術科学大学 工学部 情報・経営システム工学専攻 1年<br />
+                    長岡技術科学大学 工学部 情報・経営システム工学分野 1年<br />
                     機械学習理論研究室所属
                 </p>
             </div>

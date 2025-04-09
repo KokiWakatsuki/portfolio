@@ -27,8 +27,8 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <body className="flex flex-col justify-between items-center min-h-screen w-full">
-            <div className="w-full max-w-[1440px] mx-auto">
+        <body className="flex flex-col justify-between min-h-screen w-full">
+            <div className="w-full">
                 {children}
             </div>
         </body>

@@ -14,7 +14,7 @@ export const Footer = () => {
                     {/* Social Links */}
                     <div className="flex items-center space-x-8">
                         <Link 
-                            href="https://github.com/koki-fore" 
+                            href="https://github.com/kokiWakatsuki" 
                             target="_blank"
                             className="text-gray-400 hover:text-white/80 transition-all duration-300 hover:scale-110"
                         >
@@ -32,7 +32,7 @@ export const Footer = () => {
                             </svg>
                         </Link>
                         <Link 
-                            href="https://twitter.com/koki_fore" 
+                            href="https://x.com/koki_wakatsuki" 
                             target="_blank"
                             className="text-gray-400 hover:text-white/80 transition-all duration-300 hover:scale-110"
                         >
