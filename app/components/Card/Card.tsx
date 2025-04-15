@@ -67,10 +67,10 @@ export const Card: FC<CardProps> = ({children, title}) => {
             onMouseLeave={handleMouseLeave}
             className={`
                 flex flex-col items-center justify-center w-auto h-auto p-6
-                bg-white/5 backdrop-blur-md rounded-xl
+                bg-black/20 backdrop-blur-sm rounded-xl
                 border border-white/10
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]
-                transition-all duration-300 ease-out
+                transition-transform transition-opacity duration-300 ease-out
                 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[-50px]'}
             `}

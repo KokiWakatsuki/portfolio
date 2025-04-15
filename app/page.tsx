@@ -17,36 +17,36 @@ export default function Home() {
             <div className="fixed top-0 left-0 w-full z-50">
                 <Header />
             </div>
-            <div className='snap-y snap-mandatory h-screen overflow-y-auto'>
-                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
+            <div className='h-screen overflow-y-auto scroll-smooth'>
+                <section className='min-h-screen flex items-center justify-center pt-24 pb-32 sm:pt-28 sm:pb-36 md:pt-32 md:pb-40'>
                     <div id="about">
                         <Card title='About'>
                             <About />
                         </Card>
                     </div>
                 </section>
-                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
+                <section className='min-h-screen flex items-center justify-center pt-24 pb-32 sm:pt-28 sm:pb-36 md:pt-32 md:pb-40'>
                     <div id="work">
                         <Card title='Work'>
                             <Work />
                         </Card>
                     </div>
                 </section>
-                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
+                <section className='min-h-screen flex items-center justify-center pt-24 pb-32 sm:pt-28 sm:pb-36 md:pt-32 md:pb-40'>
                     <div id="skill">
                         <Card title='Skill'>
                             <Skill />
                         </Card>
                     </div>
                 </section>
-                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
+                <section className='min-h-screen flex items-center justify-center pt-24 pb-32 sm:pt-28 sm:pb-36 md:pt-32 md:pb-40'>
                     <div id="activity">
                         <Card title='Activity'>
                             <Activity />
                         </Card>
                     </div>
                 </section>
-                <section className='snap-start min-h-screen flex items-center justify-center py-20 sm:py-24 md:py-28'>
+                <section className='min-h-screen flex items-center justify-center pt-24 pb-32 sm:pt-28 sm:pb-36 md:pt-32 md:pb-40'>
                     <div id="contact">
                         <Card title='Contact'>
                             <Contact />

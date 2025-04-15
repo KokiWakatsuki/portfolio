@@ -30,15 +30,15 @@ export const About = () => {
             ref={ref}
             className={`
                 max-w-4xl mx-auto p-4 sm:p-6 md:p-8
-                bg-white/5 backdrop-blur-md 
-                rounded-2xl border border-white/10 
+                bg-black/20 backdrop-blur-sm
+                rounded-2xl border border-white/10
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]
-                transition-all duration-700 ease-out
+                transition-transform transition-opacity duration-700 ease-out
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
             `}
         >
             {/* Academic Background */}
-            <div className="mb-6 sm:mb-8 transition-all duration-500 hover:translate-x-2">
+            <div className="mb-6 sm:mb-8 transition-transform duration-300 ease-out hover:translate-x-2">
                 <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-white/90">
                     学歴
                 </h3>
@@ -50,7 +50,7 @@ export const About = () => {
             </div>
 
             {/* Activities */}
-            <div className="mb-6 sm:mb-8 transition-all duration-500 hover:translate-x-2">
+            <div className="mb-6 sm:mb-8 transition-transform duration-300 ease-out hover:translate-x-2">
                 <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-white/90">
                     活動
                 </h3>
@@ -62,7 +62,7 @@ export const About = () => {
             </div>
 
             {/* Description */}
-            <div className="transition-all duration-500 hover:translate-x-2">
+            <div className="transition-transform duration-300 ease-out hover:translate-x-2">
                 <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-white/90">
                     情報局について
                 </h3>

@@ -27,7 +27,7 @@ interface SkillSectionProps {
 const SkillSection = ({ title, icons, delay, isVisible }: SkillSectionProps) => (
     <div 
         className={`
-            transition-all duration-700 ease-out
+            transition-transform transition-opacity duration-500 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
         `}
         style={{ transitionDelay: `${delay}ms` }}
@@ -38,9 +38,9 @@ const SkillSection = ({ title, icons, delay, isVisible }: SkillSectionProps) => 
                 <div
                     key={index}
                     className="group relative flex items-center justify-center p-3 sm:p-4 md:p-6
-                        bg-white/5 backdrop-blur-sm rounded-xl
+                        bg-black/20 backdrop-blur-sm rounded-xl
                         border border-white/10
-                        transition-all duration-300
+                        transition-transform duration-300 ease-out
                         hover:bg-white/10 hover:scale-110
                         hover:border-white/20"
                 >
@@ -104,10 +104,10 @@ export const Skill = () => {
             ref={ref}
             className={`
                 w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8
-                bg-white/5 backdrop-blur-md
+                bg-black/20 backdrop-blur-sm
                 rounded-2xl border border-white/10
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]
-                transition-all duration-1000 ease-out
+                transition-transform transition-opacity duration-700 ease-out
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
             `}
         >
