@@ -13,10 +13,10 @@ export const WorkCard: FC<WorkCardProps> = ({title, description, role, link, img
                 group
                 flex flex-col items-center justify-start
                 w-full max-w-md h-auto p-4 sm:p-5 md:p-6
-                bg-white/5 backdrop-blur-md
+                bg-black/20 backdrop-blur-sm
                 rounded-xl border border-white/10
                 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]
-                transition-all duration-500 ease-out
+                transition-transform duration-300 ease-out
                 hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]
                 hover:-translate-y-2
             `}
@@ -41,9 +41,9 @@ export const WorkCard: FC<WorkCardProps> = ({title, description, role, link, img
                         fill
                         style={{ objectFit: 'cover' }}
                         className={`
-                            transition-all duration-500 ease-out
+                            transition-transform duration-300 ease-out
                             group-hover:scale-105
-                            ${isHovered ? 'brightness-110' : 'brightness-90'}
+                            ${isHovered ? 'brightness-100' : 'brightness-95'}
                         `}
                     />
                     <div className={`

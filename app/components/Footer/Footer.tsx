@@ -5,21 +5,21 @@ export const Footer = () => {
         <footer className="w-full bg-white/5 backdrop-blur-md border-t border-white/10">
             <div className="w-full max-w-[2000px] mx-auto">
                 {/* Main Footer Content */}
-                <div className="flex flex-col md:flex-row justify-between items-center py-6 px-8 gap-4">
+                <div className="flex flex-row justify-between items-center py-2 sm:py-6 px-4 sm:px-8">
                     {/* Copyright */}
-                    <div className="text-gray-400 hover:text-white/80 transition-colors duration-300">
+                    <div className="text-sm sm:text-base text-gray-400 hover:text-white/80 transition-colors duration-300">
                         © {new Date().getFullYear()} Koki Wakatsuki
                     </div>
 
                     {/* Social Links */}
-                    <div className="flex items-center space-x-8">
+                    <div className="flex items-center space-x-3 sm:space-x-8">
                         <Link 
                             href="https://github.com/kokiWakatsuki" 
                             target="_blank"
                             className="text-gray-400 hover:text-white/80 transition-all duration-300 hover:scale-110"
                         >
                             <svg
-                                className="w-6 h-6"
+                                className="w-5 h-5 sm:w-6 sm:h-6"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                                 aria-hidden="true"
@@ -37,7 +37,7 @@ export const Footer = () => {
                             className="text-gray-400 hover:text-white/80 transition-all duration-300 hover:scale-110"
                         >
                             <svg 
-                                className="w-6 h-6" 
+                                className="w-5 h-5 sm:w-6 sm:h-6"
                                 fill="currentColor" 
                                 viewBox="0 0 24 24" 
                                 aria-hidden="true"

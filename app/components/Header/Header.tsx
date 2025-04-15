@@ -27,12 +27,12 @@ export const Header = () => {
                 ? 'bg-white/10 backdrop-blur-md border-b border-white/20' 
                 : 'bg-transparent'
         }`}>
-            <div className='flex flex-row justify-between items-center w-full px-4 sm:px-6 md:px-8 py-4 max-w-[2000px] mx-auto'>
+            <div className='flex flex-row justify-between items-center w-full px-4 sm:px-6 md:px-8 py-2 sm:py-4 max-w-[2000px] mx-auto'>
                 <Image
                     src="/icon.png"
                     alt="Icon"
-                    width={48}
-                    height={48}
+                    width={36}
+                    height={36}
                     className='rounded-full transition-transform duration-300 hover:scale-110'
                 />
                 
@@ -74,10 +74,10 @@ export const Header = () => {
                 </button>
 
                 {/* Mobile Navigation */}
-                <nav className={`md:hidden fixed top-[72px] left-0 w-full bg-black/95 backdrop-blur-md transition-all duration-300 ${
+                <nav className={`md:hidden fixed top-[56px] left-0 w-full bg-black/95 backdrop-blur-md transition-all duration-300 ${
                     isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}>
-                    <div className="flex flex-col items-center py-6 gap-6">
+                    <div className="flex flex-col items-center py-4 gap-4">
                         <Link href="#about" className='cursor-pointer transition-all duration-300 hover:text-white text-gray-300' onClick={toggleMenu}>
                             ABOUT
                         </Link>
