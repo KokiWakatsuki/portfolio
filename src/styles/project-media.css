@@ -1,0 +1,22 @@
+.ui-browser-frame {display:block;min-width:0;max-width:100%;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+.ui-browser-frame img {display:block;width:100%;max-width:100%;height:auto;}
+.ui-shot-switch {display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.ui-shot-switch button {border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 12px;font:inherit;font-size:12px;cursor:pointer;border-radius:3px;}
+.ui-shot-switch button[aria-pressed=true] {background:var(--ink);color:var(--bg);border-color:var(--ink);}
+.project-ui-shot {width:100%;min-width:0;max-width:100%;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff;}
+.project-art .project-ui-shot img {width:100%;height:auto;display:block;filter:none;}
+.project-detail-screen {margin:20px 0 36px;min-width:0;}
+.project-detail-screen img {display:block;width:100%;height:auto;max-height:540px;object-fit:contain;background:#f9f7f0;}
+.project-detail-screen figcaption {display:flex;align-items:start;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:12px;line-height:1.8;}
+.project-detail-screen figcaption span {flex:1;min-width:180px;}
+.project-detail-screen figcaption a {white-space:nowrap;}
+.decision-study {margin:22px 0 30px;padding:24px;background:var(--soft);border:1px solid var(--line);}
+.decision-flow {display:flex;flex-direction:column;align-items:center;max-width:440px;margin:auto;}
+.decision-node {width:100%;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:12px 20px;text-align:center;}
+.decision-node span {display:block;font-size:10px;color:var(--muted);}
+.decision-node strong {display:block;font-size:14px;font-weight:500;margin-top:3px;}
+.decision-engine {background:var(--ink);color:var(--bg);}
+.decision-engine span {color:var(--bg);opacity:.8;}
+.decision-arrow {line-height:1.7;color:var(--muted);}
+.decision-study figcaption {font-size:10px;color:var(--muted);margin-top:16px;}
+@media(max-width:700px){.project-detail-screen figcaption{font-size:10px;gap:8px;}.decision-study{padding:16px;}.ui-shot-switch button{font-size:11px;padding:7px 10px;}}

@@ -1,0 +1,89 @@
+.pointer-ball {position:fixed;left:-11px;top:-11px;width:22px;height:22px;z-index:100;pointer-events:none;will-change:transform;}
+.pointer-ball svg {width:22px;height:22px;overflow:visible;}
+.pointer-ball circle {fill:#d0b86d;stroke:#9f8e5c;stroke-width:.8;}
+.pointer-ball path {fill:none;stroke:#fffdf0;stroke-width:1.5;}
+.pointer-ball.is-link circle {stroke:var(--accent);stroke-width:1.7;}
+.has-ball-cursor,.has-ball-cursor * {cursor:none!important;}
+.has-ball-cursor input,.has-ball-cursor textarea,.has-ball-cursor select,.has-ball-cursor [contenteditable=true] {cursor:auto!important;}
+.pointer-dog {position:fixed;left:-44px;top:-44px;width:88px;height:88px;z-index:45;pointer-events:none;will-change:transform;}
+.pointer-dog svg {width:88px;height:88px;overflow:visible;}
+body:focus {outline:none;}
+body.dog-outside .dog-play .toy-dog {opacity:0;}
+.companion-shadow {fill:#657460;opacity:.09;stroke:none;}
+.dog-far-leg {fill:var(--dog-coat);opacity:1;}
+.dog-fur {fill:var(--dog-coat);stroke:var(--dog-line);stroke-width:1;}
+.dog-closed-eyes {fill:none;stroke:var(--dog-line);stroke-width:1.3;display:none;}
+.dog-yawn {fill:#8c655a;stroke:var(--dog-line);stroke-width:.8;opacity:0;}
+.companion-sleep {fill:var(--dog-line);stroke:none;font:italic 12px Georgia,serif;opacity:0;}
+.deep-sleep-letter {display:none;}
+body.motion-on .pointer-dog[data-state=run] .dog-body,body.motion-on .dog-play.is-running .dog-body {animation:dog-trot 240ms ease-in-out infinite alternate;transform-origin:10px 20px;}
+body.motion-on .pointer-dog[data-state=run] .dog-leg-front,body.motion-on .dog-play.is-running .dog-leg-front {animation:dog-stride 240ms ease-in-out infinite alternate;transform-origin:-13px 17px;}
+body.motion-on .pointer-dog[data-state=run] .dog-leg-back,body.motion-on .dog-play.is-running .dog-leg-back {animation:dog-stride 240ms ease-in-out infinite alternate-reverse;transform-origin:32px 15px;}
+body.motion-on .pointer-dog[data-state=run] .dog-far-leg,body.motion-on .dog-play.is-running .dog-far-leg {animation-delay:-240ms;}
+body.motion-on .pointer-dog[data-state=run] .dog-tail {animation:chase-tail 600ms ease-in-out infinite alternate;}
+body.motion-on .pointer-dog[data-state=wait] .dog-tail {animation:chase-tail 650ms ease-in-out infinite alternate;}
+body.motion-on .pointer-dog[data-state=wait] .dog-face {animation:dog-hopeful 4.2s ease-in-out infinite;transform-origin:0px 12px;}
+body.motion-on .pointer-dog[data-state=sit] .dog-tail {animation:chase-tail 1.8s ease-in-out infinite alternate;}
+body.motion-on .pointer-dog[data-state=sit] .dog-tongue {animation:dog-lick 5s ease-in-out infinite;}
+.pointer-dog[data-state=sleep] .dog-blink,.pointer-dog[data-state=deep-sleep] .dog-blink {visibility:hidden;}
+.pointer-dog[data-state=sleep] .dog-closed-eyes,.pointer-dog[data-state=deep-sleep] .dog-closed-eyes {display:block;}
+.pointer-dog[data-state=sleep] .companion-sleep,.pointer-dog[data-state=deep-sleep] .companion-sleep {opacity:.55;}
+.pointer-dog[data-state=deep-sleep] .deep-sleep-letter {display:block;}
+body.motion-on .pointer-dog[data-state=sleep] .dog-body {animation:dog-sleep-breathe 4s ease-in-out infinite;transform-origin:10px 34px;}
+body.motion-on .pointer-dog[data-state=deep-sleep] .dog-body {animation:dog-sleep-breathe 6.5s ease-in-out infinite;transform-origin:10px 34px;}
+body.motion-on .pointer-dog[data-state=sleep] .companion-sleep {animation:dog-dream 5s ease-in-out infinite;}
+body.motion-on .pointer-dog[data-state=deep-sleep] .companion-sleep {animation:dog-dream 7s ease-in-out infinite;}
+body.motion-on .pointer-dog[data-state=wake] .dog-face {animation:dog-wake 1.25s ease-in-out;transform-origin:0px 12px;}
+body.motion-on .pointer-dog[data-state=wake] .dog-yawn {animation:dog-yawn 750ms ease-in-out;}
+@keyframes dog-trot {from{transform:rotate(-1deg);}to{transform:rotate(1deg);}}
+@keyframes dog-stride {from{transform:rotate(-12deg);}to{transform:rotate(12deg);}}
+@keyframes chase-tail {from{transform:rotate(-9deg);}to{transform:rotate(9deg);}}
+@keyframes dog-hopeful {0%,100%{transform:rotate(0);}35%,65%{transform:rotate(-7deg);}}
+@keyframes dog-lick {0%,35%,55%,100%{opacity:0;}40%,48%{opacity:1;}}
+@keyframes dog-sleep-breathe {0%,100%{transform:scaleY(1);}50%{transform:scaleY(1.025);}}
+@keyframes dog-dream {0%,100%{transform:translateY(0);opacity:.45;}50%{transform:translateY(-3px);opacity:.7;}}
+@keyframes dog-wake {0%{transform:translateY(3px) rotate(5deg);}55%{transform:translateY(0) rotate(-5deg);}100%{transform:rotate(0);}}
+@keyframes dog-yawn {0%,100%{opacity:0;transform:scaleY(.3);}35%,65%{opacity:1;transform:scaleY(1);}}
+.presence-live {position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+#detail-dialog {overflow:visible;max-height:min(85dvh,calc(100dvh - 110px));isolation:isolate;background:transparent;}
+.dialog-scroll {position:relative;z-index:1;background:var(--bg);max-height:min(85dvh,calc(100dvh - 110px));overflow:auto;overscroll-behavior:contain;border-radius:var(--radius);}
+#detail-dialog .dialog-bar {height:90px;align-items:flex-end;padding-bottom:14px;}
+#detail-dialog .dialog-close {position:absolute;right:24px;top:15px;}
+.modal-hanger {position:absolute;left:calc(50% - 43px);top:-34px;width:86px;height:100px;z-index:5;touch-action:manipulation;}
+.modal-hanger-back {z-index:0;pointer-events:none;}
+.modal-hanger-front {z-index:2;}
+.modal-hanger svg {width:86px;height:100px;overflow:visible;fill:var(--dog-coat,#fffef9);stroke:var(--dog-line,#607568);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round;}
+.hanging-swing {transform-origin:60px 48px;}
+body.motion-on .modal-hanger-front .hanging-swing {animation:hanging-sway 7.2s ease-in-out infinite;}
+.hanging-eyes {transition:transform 600ms ease-out;}
+@keyframes hanging-sway {0%,100%{transform:rotate(0);}25%{transform:rotate(-2deg);}75%{transform:rotate(2deg);}}
+.hanging-tail {fill:var(--dog-coat,#fffef9);transform-origin:98px 57px;}
+.hanging-mask {fill:#758079;stroke:none;}
+.hanging-eyes {fill:var(--dog-eye,#34473b);stroke:none;}
+.hanging-nose {fill:#34473b;stroke:none;}
+.hanging-smile {fill:none;stroke-width:1;}
+.hanging-paws {fill:var(--dog-coat,#fffef9);}
+body.motion-on .hanging-feet {animation:dangling-feet 4.4s ease-in-out infinite;transform-origin:60px 95px;}
+body.motion-on .hanging-tail {animation:hanging-tail-wag 4.8s ease-in-out infinite;}
+@keyframes hanging-tail-wag {0%,100%{transform:rotate(-4deg);}50%{transform:rotate(5deg);}}
+@keyframes dangling-feet {0%,100%{transform:rotate(-2deg);}50%{transform:rotate(2deg);}}
+.project-pager {margin:36px 0 4px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:end;}
+.project-pager a {font-size:12px;}
+@media(max-width:700px){#detail-dialog .dialog-close{right:20px;top:14px;}#detail-dialog .dialog-bar{height:90px;font-size:9px;}}
+.companion-heart {fill:#bc8b7c;opacity:0;}
+body.dog-outside .dog-play .toy-ball {opacity:0;}
+body.dog-outside .dog-play .dog-paws,body.dog-outside .dog-play .dog-heart {visibility:hidden;}
+
+body.motion-on .pointer-dog[data-state=sleep] .companion-sleep text,
+body.motion-on .pointer-dog[data-state=deep-sleep] .companion-sleep text {animation:sleep-letter-rise 3.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
+body.motion-on .pointer-dog:is([data-state=sleep],[data-state=deep-sleep]) .companion-sleep text:nth-child(2) {animation-delay:-1.2s;}
+body.motion-on .pointer-dog:is([data-state=sleep],[data-state=deep-sleep]) .companion-sleep text:nth-child(3) {animation-delay:-2.4s;}
+@keyframes sleep-letter-rise {0%{transform:translate(0,3px) scale(.85);opacity:0;}25%{opacity:.85;}75%{opacity:.6;}100%{transform:translate(4px,-8px) scale(1.1);opacity:0;}}
+
+.hanging-paws > path:last-child {fill:none;stroke:var(--dog-line);stroke-width:1;}
+.pointer-dog[data-state=wake] .dog-smile,.pointer-dog[data-state=wake] .dog-tongue {display:none;}
+ {animation:gallery-yawn 2.4s ease-in-out infinite;}
+ {animation-duration:2.4s;animation-iteration-count:infinite;}
+@keyframes gallery-yawn {0%,18%,82%,100%{opacity:0;}35%,65%{opacity:1;}}
+
+.dog-eye {stroke:#49382e;stroke-width:.65;}

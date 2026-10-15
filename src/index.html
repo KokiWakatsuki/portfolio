@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f7f1">
+  <title>若月 耕紀 — Portfolio</title>
+<meta name="description" content="長岡技術科学大学大学院・若月耕紀のポートフォリオ。数学の問題生成エンジン、組織コミュニケーションの研究、開発とデザインの制作物を紹介します。">
+
+
+
+
+
+
+
+
+
+  <link rel="icon" href="assets/avatar.png">
+  <script src="js/site-data.js?v={{REVISION}}" defer></script>
+  <script src="js/vendor/budoux-ja.js?v={{REVISION}}" defer></script>
+  <script src="js/typography.js?v={{REVISION}}" defer></script>
+  <script src="js/navigation.js?v={{REVISION}}" defer></script>
+  <script src="js/problem-data.js?v={{REVISION}}" defer></script>
+  <script src="js/problem-viewer.js?v={{REVISION}}" defer></script>
+  <script src="js/project-media.js?v={{REVISION}}" defer></script>
+  <script src="js/research-concept.js?v={{REVISION}}" defer></script><script src="js/portfolio.js?v={{REVISION}}" defer></script>
+  <script src="js/timeline.js?v={{REVISION}}" defer></script>
+  <script src="js/motion.js?v={{REVISION}}" defer></script>
+  <script src="js/dog-art.js?v={{REVISION}}" defer></script>
+  <script src="js/dog-play.js?v={{REVISION}}" defer></script>
+  <script src="js/pointer-gesture.js?v={{REVISION}}" defer></script>
+  <script src="js/dog-behavior.js?v={{REVISION}}" defer></script><script src="js/dog-companion.js?v={{REVISION}}" defer></script>
+<link rel="stylesheet" href="styles/site.css?v={{REVISION}}">
+</head>
+<body data-design="studio">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand"><button type="button" class="dog-guide-toggle" aria-label="犬のアイコンからサイト案内を開く" aria-controls="dog-guide" aria-expanded="false"><img src="assets/avatar.png" alt="若月耕紀の犬のアイコン" width="44" height="44"></button><a class="wordmark" href="#main">Koki Wakatsuki</a></div>
+      <nav id="dog-guide" class="dog-guide" aria-label="サイトのメニュー" hidden><a href="#main">ホームに戻る <span aria-hidden="true">↖</span></a><button type="button" id="motion-toggle" aria-label="動きを止める" aria-pressed="false"><span>動き</span><span class="motion-value">ON</span></button></nav>
+      <nav aria-label="メインナビゲーション"><a href="#projects">Projects</a><a href="#about">About</a><a href="#writing">Writing</a><a href="#contact">Contact</a></nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-name">
+        <div class="hero-copy">
+          <p class="eyebrow">DEVELOPMENT / RESEARCH</p>
+          <h1 id="hero-name">若月 耕紀<span class="english-name">Koki Wakatsuki</span></h1>
+          <p class="hero-intro" id="hero-intro"></p>
+          <a class="hero-link" href="#projects">プロジェクトを見る <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="dog-play" aria-label="犬とボールの小さな遊び場">
+          <div class="dog-arena">
+            <svg viewBox="0 0 340 220" role="img" aria-label="犬とボールの小さな遊び場">
+              <defs><g id="paw-shape"><ellipse cx="0" cy="3" rx="3.5" ry="3"/><circle cx="-3.6" cy="-2" r="1.5"/><circle cx="0" cy="-4" r="1.5"/><circle cx="3.6" cy="-2" r="1.5"/></g></defs>
+              <ellipse class="dog-ground" cx="171" cy="188" rx="142" ry="14"/>
+              <g class="dog-paws" aria-hidden="true"></g>
+              <g class="toy-dog" transform="translate(51 149)">
+                <g class="dog-tail"><path d="M39 20Q67 21 64 0Q63 -10 57 -14Q67 7 45 10"/></g>
+                <g class="dog-body"><path d="M-17 26Q-16 0 9 -2Q35 -2 39 21L38 34H-18Z"/><path class="dog-back" d="M4 0Q30 -1 35 18Q19 16 13 9Z"/><path d="M-10 22V35H0V23M22 23V35H33V25"/></g>
+                <g class="dog-face"><path d="M-23 -9L-24 -35L-9 -25Q0 -28 10 -25L25 -35L23 -8Q22 13 0 16Q-21 13 -23 -9Z"/><path class="dog-mask" d="M-23 -25L-19 -12L-8 -2L0 -12L8 -2L20 -12L24 -25L11 -19L0 -23L-11 -19Z"/><path class="dog-ear" d="M-20 -28L-19 -18L-13 -23M20 -28L19 -18L13 -23"/><g class="dog-eyes"><circle cx="-9" cy="-5" r="2"/><circle cx="9" cy="-5" r="2"/></g><path class="dog-nose" d="M-3 3Q0 0 3 3L0 6Z"/><path class="dog-smile" d="M-5 8Q0 12 5 8"/></g>
+              </g>
+              <g class="toy-ball" transform="translate(258 173)"><circle r="10"/><path d="M-7 -7Q4 -1 7 7M-7 7Q-4 0 7 -7"/></g>
+              <g class="dog-heart" transform="translate(64 95)"><path d="M0 3C-12 -7 -10 -14 -4 -14Q0 -14 0 -10Q0 -14 4 -14C10 -14 12 -7 0 3Z"/></g>
+            </svg>
+          </div>
+          <div class="dog-play-bottom"><button type="button" class="dog-throw">ボールを投げる <span aria-hidden="true">↗</span></button></div>
+        </aside>
+      </section>
+
+      <section id="projects" class="projects section" aria-labelledby="projects-title">
+        <div class="section-heading"><div><p class="eyebrow">SELECTED PROJECTS</p><h2 id="projects-title">プロジェクト</h2></div><span class="section-side-note">開発と研究 / 2022 — 2026</span></div>
+        <div class="project-grid" id="project-grid"></div>
+      </section>
+
+      <section id="design" class="visual-design section" aria-labelledby="design-title">
+        <div class="section-heading"><div><p class="eyebrow">VISUAL DESIGN</p><h2 id="design-title">デザイン</h2></div><span class="section-side-note">UI &amp; Logo</span></div>
+        <div class="design-grid"><article class="design-showcase"><figure><div class="logo-wordmark"><img src="assets/seeft-logo.svg" alt="制作したSeeFTの横長ロゴ" width="304" height="99" loading="lazy"></div><div class="logo-symbol"><img src="assets/seeft-logo-square.svg" alt="制作したSeeFTのアイコン" width="104" height="104" loading="lazy"></div></figure><div class="design-copy"><h3>SeeFT</h3><p>学園祭のシフト管理アプリのロゴを、Figmaで制作しました。</p><span class="eyebrow">LOGO DESIGN / FIGMA</span></div></article><article class="design-showcase"><a class="edu-preview" href="assets/edu-insight-learning.svg" target="_blank" rel="noreferrer" aria-label="Edu Insightの画面デザインを大きく見る"><img src="assets/edu-insight-learning.svg" alt="Edu Insightの学習記録一覧の画面デザイン" width="1072" height="693" loading="lazy"></a><div class="design-copy"><h3>Edu Insight</h3><p>授業の課題で制作した、学習記録アプリの画面デザインです。</p><span class="eyebrow">UI DESIGN / FIGMA / CLASS PROJECT</span></div></article></div>
+      </section>
+
+      <section id="about" class="about section" aria-labelledby="about-title">
+        <div class="about-heading"><p class="eyebrow">ABOUT ME</p><h2 id="about-title">私について</h2><span class="about-location">NAGAOKA, NIIGATA</span></div>
+        <div class="about-copy" id="about-copy"></div>
+      </section>
+
+      <section id="experience" class="experience section" aria-labelledby="experience-title">
+        <div class="section-heading"><div><p class="eyebrow">EXPERIENCE</p><h2 id="experience-title">年表</h2></div></div>
+        <div class="activity-scroll" tabindex="0" role="region" aria-label="2018年から現在までの活動の年表"><div id="activity-chart" class="activity-chart"></div></div>
+        <div id="activity-detail" class="activity-detail" aria-live="polite"></div>
+        <details class="all-experience"><summary>経歴をすべて見る <span aria-hidden="true">＋</span></summary><div id="full-experience"></div></details>
+      </section>
+
+      <section id="writing" class="writing section" aria-labelledby="writing-title">
+        <div class="section-heading"><div><p class="eyebrow">WRITING & TALKS</p><h2 id="writing-title">技術記事・研究発表</h2></div></div>
+        <div class="writing-grid"><div><h3 class="column-title">技術記事 <span>Zenn</span></h3><p class="writing-intro">はじめて触る人がつまずかないよう、教えることを意識して書いています。</p><div id="articles"></div></div><div><h3 class="column-title">研究発表</h3><div id="talks"></div></div></div>
+      </section>
+
+      <section id="recognition" class="recognition section" aria-labelledby="recognition-title"><div class="section-heading"><p class="eyebrow">AWARDS & SELECTIONS</p><h2 id="recognition-title">受賞・採択</h2></div><div id="awards" class="recognition-list"></div></section>
+
+      <section id="contact" class="contact section" aria-labelledby="contact-title"><p class="eyebrow">GET IN TOUCH</p><h2 id="contact-title">連絡先</h2><a class="email-link" href="mailto:02.k.wakatsuki@gmail.com"><svg class="contact-icon" aria-hidden="true"><use href="assets/contact-icons.svg#email"/></svg><span>02.k.wakatsuki@gmail.com</span></a><div class="social-links"><a href="https://github.com/KokiWakatsuki" target="_blank" rel="noreferrer"><svg class="contact-icon" aria-hidden="true"><use href="assets/contact-icons.svg#github"/></svg>GitHub <span aria-hidden="true">↗</span></a><a href="https://x.com/koki_wakatsuki" target="_blank" rel="noreferrer"><svg class="contact-icon" aria-hidden="true"><use href="assets/contact-icons.svg#x"/></svg>X <span aria-hidden="true">↗</span></a><a href="https://zenn.dev/k_wakatsuki" target="_blank" rel="noreferrer"><svg class="contact-icon" aria-hidden="true"><use href="assets/contact-icons.svg#zenn"/></svg>Zenn <span aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="site-footer"><a href="#main">Koki Wakatsuki</a><time id="last-updated" datetime="{{DATE}}">Last updated {{DATE_LABEL}}</time><a href="#main">ページの先頭へ ↑</a></footer>
+  </div>
+
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-scroll"><div class="dialog-bar"><span class="eyebrow" id="dialog-kicker">PROJECT NOTES</span><button type="button" class="dialog-close" aria-label="詳細を閉じる">閉じる ×</button></div><div class="dialog-content"><h2 id="dialog-title"></h2><div id="dialog-body"></div></div></div></dialog>
+  <noscript><p class="noscript">作品の説明と遊びの表示にはJavaScriptを有効にしてください。</p></noscript>
+</body>
+</html>

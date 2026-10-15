@@ -1,0 +1,28 @@
+.activity-scroll {max-width:100%;overflow:auto;overscroll-behavior-inline:contain;border:1px solid var(--line);background:var(--bg);scrollbar-color:var(--accent) var(--soft);scrollbar-width:thin;}
+.activity-chart {min-width:800px;padding:26px 42px 12px 24px;}
+.activity-axis,.activity-lane {display:grid;grid-template-columns:76px minmax(0,1fr);}
+.activity-axis {height:35px;}
+.activity-axis>span:first-child {position:sticky;left:0;z-index:2;background:var(--bg);}
+.activity-axis>div {position:relative;}
+.activity-axis time,.activity-now {position:absolute;transform:translateX(-50%);font-family:'DM Sans',sans-serif;font-size:10px;color:var(--muted);}
+.activity-axis time:first-child {transform:none;}
+.activity-now {font-size:9px;white-space:nowrap;top:18px;}
+.activity-label {position:sticky;left:0;z-index:2;background:var(--bg);font-size:12px;padding-top:15px;border-top:1px solid var(--line);}
+.activity-track {position:relative;border-top:1px solid var(--line);min-width:0;}
+.activity-track>i {position:absolute;top:0;bottom:0;width:1px;background:var(--line);opacity:.5;}
+.activity-event {position:absolute;display:flex;align-items:center;height:24px;min-width:8px;max-width:100%;border:0;border-radius:3px;background:var(--lane-color);color:#fff;padding:0 8px;text-align:left;font:10px 'Noto Sans JP',sans-serif;z-index:1;}
+.activity-event span {white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.activity-event.is-active,.activity-event:focus-visible {outline:2px solid var(--ink);outline-offset:3px;opacity:1;}
+.activity-event.is-point {padding:0;background:transparent;transform:translateX(-50%);}
+.activity-event.is-point:before {content:'';width:10px;height:10px;border-radius:50%;background:var(--lane-color);margin:auto;box-shadow:0 0 0 3px var(--bg);}
+.activity-lane[data-category="0"] {--lane-color:#587361;}
+.activity-lane[data-category="1"] {--lane-color:#3f6676;}
+.activity-lane[data-category="2"] {--lane-color:#977647;}
+.activity-lane[data-category="3"] {--lane-color:#836670;}
+.activity-lane[data-category="4"] {--lane-color:#62748c;}
+.activity-detail {min-height:88px;padding:16px 0;visibility:hidden;}
+.activity-detail.is-active {visibility:visible;}
+.activity-detail-meta {font-size:10px;color:var(--muted);}
+.activity-detail-meta time {margin-left:16px;}
+.activity-detail p {font-size:13px;line-height:1.8;margin-top:4px;}
+@media(max-width:700px){.activity-chart {padding-left:16px;}.activity-detail {min-height:110px;}.activity-detail p{font-size:12px;}}

@@ -1,0 +1,83 @@
+{--bg:#f8f7f2;--ink:#263d33;--muted:#627068;--accent:#356d55;--line:#d9ddd4;--soft:#e7ece2;--second:#e8e7dd;--radius:4px;}
+body[data-design=studio] {--bg:#f5f5f0;--ink:#26332c;--muted:#68716a;--accent:#416c52;--line:#d7ddd5;--soft:#e7ece3;--second:#e8e4db;--radius:4px;}
+body[data-design] .site-shell {width:min(1120px,calc(100% - 96px));}
+body[data-design] .hero {display:block;max-width:none;text-align:left;padding:65px 0 68px;margin:0;}
+body[data-design] .hero-copy {max-width:750px;}
+body[data-design] .hero h1 {font-size:clamp(38px,4.5vw,64px);font-weight:500;line-height:1.45;margin:16px 0 26px;opacity:1;transform:none;animation:none;}
+body[data-design] .hero-intro {font-size:16px;max-width:700px;line-height:2;opacity:1;transform:none;animation:none;margin:0;}
+body[data-design] .hero-link {margin-top:24px;}
+body[data-design] .project-grid {display:block;}
+body[data-design] .project {display:grid;grid-template-columns:minmax(0,1fr);gap:36px;align-items:center;padding:32px 0;border:0;border-top:1px solid var(--line);border-radius:0;background:none;min-width:0;}
+body[data-design] .project.has-art {grid-template-columns:minmax(0,1fr) minmax(240px,32%);}
+body[data-design] .project-art {grid-column:2;grid-row:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;min-width:0;width:100%;height:auto;aspect-ratio:4/3;padding:18px;background:var(--soft);margin:0;border-radius:4px;order:initial;}
+body[data-design] .art-caption {position:static;text-align:center;font-size:10px;line-height:1.6;}
+body[data-design] .project-content {grid-column:1;grid-row:1;padding:0;min-width:0;max-width:760px;}
+body[data-design] .project h3 {font-size:23px;line-height:1.65;margin:10px 0 12px;}
+body[data-design] .project-content > p {font-size:14px;line-height:2;max-width:none;}
+.project-summary p {font-size:14px;line-height:2;color:var(--muted);max-width:43em;}
+.project-summary p+p {margin-top:1em;}
+.project-technologies {display:flex;flex-direction:column;gap:4px;max-width:100%;}
+.project-links,.project-repositories {display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:11px;line-height:1.8;}
+.project-repositories {margin-top:32px;padding-top:20px;border-top:1px solid var(--line);}
+.tech-history {font-size:11px;line-height:1.8;color:var(--muted);}
+.project-page-body>p,.project-page-body>ul,#dialog-body>p,#dialog-body>ul {max-width:43em;}
+.project-page-body>p+p,#dialog-body>p+p {margin-top:1.4em;}
+.seeft-logo {margin:24px 0 32px;}
+.seeft-logo img {display:block;max-width:100%;height:auto;}
+.seeft-logo figcaption {font-size:11px;color:var(--muted);margin-top:10px;}
+body[data-design] .recognition .section-heading {display:block;text-align:center;margin-bottom:30px;}
+.recognition-list {max-width:640px;margin:0 auto;}
+.recognition-list p {font-size:14px;line-height:2;padding:18px 0;text-align:left;border-bottom:1px solid var(--line);}
+body[data-design] .contact {text-align:center;padding:72px 0 84px;}
+body[data-design] .contact h2 {font-size:32px;line-height:1.6;margin:10px 0 26px;}
+.contact .social-links {justify-content:center;}
+@media(max-width:700px){.recognition-list p{font-size:13px;}body[data-design] .contact{padding:48px 0 60px;}body[data-design] .contact h2{font-size:28px;}}
+@media(max-width:380px){
+ body:not([data-project-detail]) .site-header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;}
+ body:not([data-project-detail]) .site-header .brand{grid-column:1;grid-row:1;}
+ body:not([data-project-detail]) .site-header .site-tools{grid-column:2;grid-row:1;}
+ body:not([data-project-detail]) .site-header nav[aria-label="メインナビゲーション"]{grid-column:1/-1;grid-row:2;justify-content:space-between;}
+ .site-header nav[aria-label="メインナビゲーション"] a{white-space:nowrap;}
+}
+.project-facts {font-size:12px;color:var(--muted);line-height:1.9;padding-left:18px;margin:16px 0 0;}
+.project-facts li+li {margin-top:6px;}
+body[data-design] .project-number {display:inline;}
+body[data-design] .project-topline {font-size:10px;}
+body[data-design] .project-topline > span:last-child {margin-left:16px;}
+body[data-design] .project-bottom {justify-content:start;gap:24px;}
+body[data-design] .tech-line {font-size:11px;}
+body[data-design] .section-heading {text-align:left;justify-content:space-between;}
+body[data-design] .section-heading h2 {font-size:32px;}
+body[data-design] .about {padding:48px 0;margin:0;border-top:1px solid var(--line);border-radius:0;background:none;grid-template-columns:1fr 1.6fr;gap:64px;}
+body[data-design] .about-heading h2 {font-size:30px;}
+body[data-design] .all-experience {margin-left:0;margin-right:0;margin-top:0;}
+body[data-design] .timeline-row {grid-template-columns:180px minmax(0,1fr);}
+.project-page {max-width:800px;margin:60px auto 80px;min-width:0;}
+.project-page h1 {font-size:clamp(26px,4vw,40px);line-height:1.6;margin:12px 0 32px;}
+.project-page-body h2,.project-page-body h3 {font-size:21px;margin:36px 0 14px;}
+.project-page-body p,.project-page-body li {font-size:15px;line-height:2.1;color:var(--muted);}
+.project-page-body p {margin:16px 0;}
+.project-page-body li {margin-bottom:10px;}
+.project-page-body ul {padding-left:22px;}
+.project-page-body a {overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px;}
+.project-back {font-size:12px;}
+.project-page-link {font-size:12px!important;margin:0 0 20px!important;}
+.project-page-link a {font-size:12px;}
+.dialog-content,.project-page-body {min-width:0;overflow-wrap:anywhere;}
+@media(max-width:800px) {
+ body[data-design] .site-shell {width:calc(100% - 40px);}
+ body[data-design] .project.has-art {grid-template-columns:minmax(0,1fr);gap:22px;}
+ body[data-design] .project-art {grid-column:1;grid-row:2;aspect-ratio:16/10;max-width:480px;padding:20px;}
+ body[data-design] .project-content {grid-column:1;grid-row:1;}
+ body[data-design] .project h3 {font-size:21px;}
+ body[data-design] .hero {padding:42px 0 45px;}
+ body[data-design] .hero h1 {font-size:42px;}
+ body[data-design] .hero-intro {font-size:14px;}
+ body[data-design] .about {grid-template-columns:minmax(0,1fr);gap:22px;padding:36px 0;}
+ body[data-design] .about-heading h2 {margin-top:10px;}
+ body[data-design] .about-location {margin-top:10px;}
+ body[data-design] .section-heading h2 {font-size:28px;}
+ body[data-design] .timeline-row {grid-template-columns:minmax(0,1fr);gap:5px;}
+ .project-page {margin:36px auto 55px;}
+ .project-page-body p,.project-page-body li {font-size:14px;}
+}

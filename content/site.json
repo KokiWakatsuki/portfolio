@@ -1,0 +1,305 @@
+{
+  "lastUpdated": "2026-10-15",
+  "intro": "長岡技術科学大学大学院 修士2年。機械学習理論研究室で組織のコミュニケーションを研究しながら、学習塾向けサービスの問題生成エンジンを開発しています。",
+  "about": [
+    "長岡高専でプログラミングを始めました。高専4年からは学習塾の講師とWeb開発のアルバイトを経験しました。",
+    "2023年に長岡技術科学大学へ編入し、学園祭実行委員会の情報局で運営システムを開発しました。2023年9月から1年間、約30人の局の代表を務めました。 学園祭での活動と並行して、Webアプリの業務委託にも取り組みました。",
+    "大学院では組織コミュニケーションの研究とTAを担当しています。現在は4人のチームで、学習塾向けサービスの問題生成エンジンを開発しています。",
+    "よく使う技術：TypeScript（Next.js、React）、Python、Ruby on Rails、Laravel、Flutter、Docker"
+  ],
+  "writingIntro": "初めて触る人向けに書いています。",
+  "projects": [
+    {
+      "id": "mongene",
+      "title": "モンジェネ（学習塾向けの問題生成）",
+      "detailTitle": "モンジェネ（学習塾向けの問題生成）",
+      "year": "2025–",
+      "summaryParagraphs": [
+        "中学数学の問題を、単元・問題の形式・難易度を指定して自動で作るエンジンです。2025年には3人のチームYukiwariでETSUZAN2025に採択され、LLMで問題を生成する仕組みを開発しました。",
+        "現在は4人のチームで、問題生成の仕組みを作り直しています。AIで問題の設計図を作り、プログラムがその設計図から問題を組み立てます。答案の採点にもAIを使います。"
+      ],
+      "technology": "Python（FastAPI、SymPy）。ETSUZAN2025ではNext.js、Go、Gemini",
+      "bullets": [
+        "担当：ETSUZAN2025では開発全般、現在は問題生成エンジンの設計と実装",
+        "技術：Python（FastAPI、SymPy）。ETSUZAN2025ではNext.js、Go、Gemini",
+        "GitHub（ETSUZAN2025で開発したもの）：https://github.com/KokiWakatsuki/mon-gene"
+      ],
+      "externalLinks": [
+        {
+          "label": "ETSUZANのチーム紹介",
+          "url": "https://etsuzan.org/posts/Yukiwari"
+        }
+      ],
+      "detailFile": "projects/mongene.html"
+    },
+    {
+      "id": "research",
+      "title": "組織コミュニケーションの生成モデル",
+      "detailTitle": "組織コミュニケーションの生成モデル",
+      "year": "2023–",
+      "summaryParagraphs": [
+        "学生団体のSlackのやりとりをもとに、組織の形を数値で表し、メンバーを変えずにつながり方だけを変えたらどうなるかを調べる研究です。深層学習のモデル（GraphVAE）を組織向けに作り替えています。"
+      ],
+      "technology": "Python、PyTorch",
+      "bullets": [
+        "人工の組織1,000件と、実際の学生団体28件で学習",
+        "SITA2025、情報処理学会 第87回全国大会で発表",
+        "技術：Python、PyTorch"
+      ],
+      "externalLinks": [],
+      "detailFile": "projects/research.html"
+    },
+    {
+      "id": "festival",
+      "title": "学園祭の運営システム",
+      "detailTitle": "学園祭の運営システムと、NUTMEGの代表",
+      "year": "2023–2025",
+      "summaryParagraphs": [
+        "学園祭の参加団体の申請を管理するアプリと、当日のシフト管理アプリです。学園祭実行委員会の情報局で、2023年から2年間、機能の追加と不具合の修正を担当しました。"
+      ],
+      "technology": "Nuxt.js、Next.js、Ruby on Rails ほか",
+      "bullets": [
+        "技術：Nuxt.js、Next.js、Ruby on Rails ほか",
+        "GitHub：https://github.com/NUTFes/group-manager-2 ／ https://github.com/NUTFes/SeeFT ／ https://github.com/NUTFes/NUTMEG-Seeds"
+      ],
+      "externalLinks": [
+        {
+          "label": "NUTMEG",
+          "url": "https://blog.nutmeg.cloud/"
+        }
+      ],
+      "detailFile": "projects/festival.html"
+    },
+    {
+      "id": "sporty",
+      "title": "sporty",
+      "detailTitle": "sporty",
+      "year": "2022",
+      "summaryParagraphs": [
+        "高専の卒業研究で作った、体育の授業向けの運動学習アプリです。撮った動画の遅延再生やスロー再生、2つの動画を並べての比較ができます。使ってもらった人の意見をもとに、保存と拡大の機能を追加しました。卒業研究で銅賞をもらっています。"
+      ],
+      "technology": "Flutter",
+      "bullets": [
+        "技術：Flutter",
+        "GitHub：https://github.com/KokiWakatsuki/sporty"
+      ],
+      "externalLinks": [],
+      "detailFile": "projects/sporty.html"
+    }
+  ],
+  "timeline": [
+    [
+      "2026.06–",
+      "学習塾向けサービスを4人のチームで開発（問題生成エンジンを担当）"
+    ],
+    [
+      "2025.11–2026.02",
+      "Web系企業でエンジニアインターン（フロントエンド開発）"
+    ],
+    [
+      "2025.08–2026.03",
+      "ETSUZAN2025 採択・修了"
+    ],
+    [
+      "2025.04–",
+      "長岡技術科学大学大学院 情報・経営システム工学分野（機械学習理論研究室）。TAを担当"
+    ],
+    [
+      "2024.12–2025.04",
+      "学習塾向け管理システムの開発（業務委託）。授業の進捗と理解度を管理する画面とAPI"
+    ],
+    [
+      "2024.10–2025.02",
+      "実務訓練。食品メーカーで製造データを分析"
+    ],
+    [
+      "2023.10–2024.09",
+      "Webアプリとスマホアプリの開発（アルバイト）。ECサイトの決済、スカウトアプリの入力フォームなど"
+    ],
+    [
+      "2023.09–2024.09",
+      "学園祭実行委員会 情報局長（NUTMEG代表）"
+    ],
+    [
+      "2023.08–2023.10",
+      "インターンシップ情報サイトの開発（業務委託、2人チーム）"
+    ],
+    [
+      "2023.04",
+      "長岡技術科学大学 情報・経営システム工学課程に編入"
+    ],
+    [
+      "2021.07–2023.03",
+      "Web開発のアルバイト"
+    ],
+    [
+      "2021.03–2023.03",
+      "学習塾の講師（アルバイト）"
+    ],
+    [
+      "2018.04–2023.03",
+      "長岡工業高等専門学校 電子制御工学科"
+    ]
+  ],
+  "activities": [
+    {
+      "category": "学校",
+      "kind": "期間",
+      "period": "2018.04–2023.03",
+      "content": "長岡工業高等専門学校 電子制御工学科"
+    },
+    {
+      "category": "学校",
+      "kind": "期間",
+      "period": "2023.04–2025.03",
+      "content": "長岡技術科学大学 情報・経営システム工学課程（編入）"
+    },
+    {
+      "category": "学校",
+      "kind": "期間",
+      "period": "2025.04–",
+      "content": "長岡技術科学大学大学院 情報・経営システム工学分野"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2021.07–2023.03",
+      "content": "Web開発のアルバイト"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2023.08–2023.10",
+      "content": "インターンシップ情報サイトの開発（業務委託）"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2023.10–2024.09",
+      "content": "Webアプリとスマホアプリの開発（アルバイト）"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2023.04–2025.03",
+      "content": "学園祭の運営システム"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2024.10–2025.02",
+      "content": "実務訓練（製造データの分析）"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2024.12–2025.04",
+      "content": "学習塾向け管理システムの開発（業務委託）"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2025.08–2026.03",
+      "content": "モンジェネ（ETSUZAN2025）"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2025.11–2026.02",
+      "content": "エンジニアインターン（フロントエンド開発）"
+    },
+    {
+      "category": "開発",
+      "kind": "期間",
+      "period": "2026.06–",
+      "content": "学習塾向けサービス（問題生成エンジンを担当）"
+    },
+    {
+      "category": "教える",
+      "kind": "期間",
+      "period": "2021.03–2023.03",
+      "content": "学習塾の講師"
+    },
+    {
+      "category": "教える",
+      "kind": "期間",
+      "period": "2025.04–",
+      "content": "大学院のTA"
+    },
+    {
+      "category": "教える",
+      "kind": "時点",
+      "period": "2025.06",
+      "content": "Zennで入門ガイドを2本公開"
+    },
+    {
+      "category": "運営",
+      "kind": "時点",
+      "period": "2022.11",
+      "content": "学科対抗演劇の照明リーダー（照明賞）"
+    },
+    {
+      "category": "運営",
+      "kind": "期間",
+      "period": "2023.04–2023.09",
+      "content": "学園祭実行委員会 情報局（第42回技大祭まで）"
+    },
+    {
+      "category": "運営",
+      "kind": "期間",
+      "period": "2023.09–2024.09",
+      "content": "情報局長（NUTMEG代表、第43回技大祭）"
+    },
+    {
+      "category": "研究",
+      "kind": "期間",
+      "period": "2022.09–2023.03",
+      "content": "高専の卒業研究（sporty、銅賞）"
+    },
+    {
+      "category": "研究",
+      "kind": "期間",
+      "period": "2023.09–",
+      "content": "機械学習理論研究室（組織コミュニケーションの研究）"
+    },
+    {
+      "category": "研究",
+      "kind": "時点",
+      "period": "2025.03",
+      "content": "情報処理学会 第87回全国大会で発表"
+    },
+    {
+      "category": "研究",
+      "kind": "時点",
+      "period": "2025.11",
+      "content": "SITA2025で発表"
+    }
+  ],
+  "articles": [
+    {
+      "date": "2026.02",
+      "title": "Slackのログが消える問題を，サクッと解決した話",
+      "url": "https://zenn.dev/k_wakatsuki/articles/17f42744566e8e"
+    },
+    {
+      "date": "2025.06",
+      "title": "Git・Github超入門ガイド",
+      "url": "https://zenn.dev/k_wakatsuki/articles/a980f66b4dda22"
+    },
+    {
+      "date": "2025.06",
+      "title": "Docker超入門ガイド",
+      "url": "https://zenn.dev/k_wakatsuki/articles/786038342f6103"
+    }
+  ],
+  "talks": [
+    "2026　SITA2026「メンバー構成を固定した組織コミュニケーション構造の条件付き生成と構造操作の到達範囲」（発表予定）",
+    "2025.11　SITA2025「GraphVAEを用いたSlackチャットログに基づく組織構造再構成に関する研究」",
+    "2025.03　情報処理学会 第87回全国大会"
+  ],
+  "awards": [
+    "ETSUZAN2025 採択（新潟県 IT人材育成事業）",
+    "長岡高専 卒業研究 銅賞",
+    "長岡高専 学科対抗演劇 照明賞（照明リーダー）"
+  ]
+}
