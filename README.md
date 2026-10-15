@@ -45,6 +45,14 @@ GitHubの `main` ブランチへのpushで公開します。ビルドコマン�
 
 参考：[Cloudflare PagesのGitHub連携](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/)
 
+## 検索向けの設定
+
+本文と作品へのリンクはビルド時にHTMLへ出力します。ブラウザー側のJavaScriptは改行調整、モーダル、図や犬の操作を担当します。作品の個別ページも本文をHTMLに含め、読み込み後に画像の切り替えなどを追加します。
+
+タイトル・説明文・canonical・構造化データは `scripts/seo.mjs`、トップページの本文出力は `scripts/render-content.mjs` で管理します。`sitemap.xml` と `robots.txt` はビルド時に生成します。サイトマップには公開する5ページだけを掲載し、最終更新日は `content/site.json` の値を使います。
+
+Google Search Consoleでは `wakatsuki.app` のドメインプロパティを使用し、サイトマップは `https://portfolio.wakatsuki.app/sitemap.xml` を送信します。登録リクエストは検索掲載や順位を保証するものではありません。
+
 ## 使用素材
 
 犬のイラストと動作はSVG・JavaScriptによるものです。文節の判定にはGoogle BudouX、GitHub・X・ZennのアイコンにはSimple Iconsを使用しています。ライセンスは `licenses/` を参照してください。制作物の画像・文章・デザインの権利はそれぞれの権利者に帰属します。

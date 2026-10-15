@@ -35,36 +35,6 @@
     }
     return;
   }
-  // Keep the two activities on separate lines; each still wraps naturally on small screens.
-  $('#hero-intro').innerHTML = escape(data.intro)
-    .replace(/(修士2年[。．])\s*/,'$1<br>')
-    .replace(/(研究しながら、)\s*/,'$1<br>');
-  $('#about-copy').innerHTML = data.about.map(text=>`<p>${escape(text)}</p>`).join('');
-  $('.writing-intro').textContent=data.writingIntro || '';
-  const art = id => ({
-    mongene:`<div class="project-ui-shot"><img src="assets/mongene-engine-problem-ui.jpg" alt="図つきの問題を表示するモンジェネの出題画面" loading="lazy"></div><span class="art-caption">モンジェネの出題画面</span>`,
-    research:`<div class="project-ui-shot"><img src="assets/research-latent.png" alt="学習済みモデルの潜在空間。組織の型を色で示す研究図" loading="lazy"></div><span class="art-caption">学習済みモデルの潜在空間</span>`,
-    festival:`<div class="project-ui-shot"><img src="assets/gm-current-ui.jpg" alt="GM2の申請状況とお知らせ" loading="lazy"></div><span class="art-caption">GM2の申請状況とお知らせ</span>`,
-    etsuzan:`<div class="flow-art"><span>文章とプログラム</span><span class="flow-arrow" aria-hidden="true">↓</span><strong>LLM</strong><span class="flow-arrow" aria-hidden="true">↓</span><span>計算と作図</span><strong>PROGRAM</strong></div><span class="art-caption">問題生成の役割分担 / 概念図</span>`,
-    sporty:`<div class="project-ui-shot"><img src="assets/sporty-comparison-ui.jpg" alt="sportyの並列動画比較画面" loading="lazy"></div><span class="art-caption">2つの動画を並列比較</span>`
-  })[id];
-  $('#project-grid').innerHTML=data.projects.map((project,index)=>{
-    const visual=art(project.id);
-    const facts=project.bullets.filter(line=>!line.startsWith('技術：')&&!line.startsWith('GitHub')).map(line=>`<li>${escape(line)}</li>`).join('');
-    let paragraphs=project.summaryParagraphs||project.summary.split(/\n\s*\n/);
-    if(project.id==='sporty'&&paragraphs.length===1)paragraphs=paragraphs[0].split(/(?<=できます。)/);
-    const summary=paragraphs.filter(Boolean).map(text=>`<p>${escape(text).replace(/\n/g,'<br>')}</p>`).join('');
-    const technology=project.technology.split('。').filter(Boolean).map((text,i)=>`<span class="${i?'tech-history':'tech-line'}">${escape(text)}</span>`).join('');
-    return `<article class="project project-${project.id} ${visual?'has-art':''}">
-      ${visual?`<a href="projects/${project.id}/" class="project-art" data-project="${project.id}" aria-label="${escape(project.title)}の詳細を見る">${visual}</a>`:''}
-      <div class="project-content"><div class="project-topline"><span class="project-number">${String(index+1).padStart(2,'0')}</span><span>${projectTypes[project.id]}</span><span>${escape(project.year)}</span></div>
-      <h3><a href="projects/${project.id}/" data-project="${project.id}">${window.projectTitleMarkup(project.id,project.title)}</a></h3><div class="project-summary">${summary}</div>${facts?`<ul class="project-facts">${facts}</ul>`:''}<div class="project-bottom"><div class="project-technologies">${technology}</div><div class="project-links"><a href="projects/${project.id}/" class="project-more" data-project="${project.id}">詳しく見る <span aria-hidden="true">↗</span></a>${repositoriesMarkup(project)}</div></div></div></article>`;
-  }).join('');
-  const timelineRow=([date,content])=>`<div class="timeline-row"><time>${escape(date)}</time><p>${escape(content)}</p></div>`;
-  $('#full-experience').innerHTML=data.timeline.map(timelineRow).join('');
-  $('#articles').innerHTML=data.articles.map(article=>`<a class="article-link" href="${escape(article.url)}" target="_blank" rel="noreferrer"><time>${escape(article.date)}</time><span>${escape(article.title)}</span><span class="article-arrow" aria-hidden="true">↗</span></a>`).join('');
-  $('#talks').innerHTML=data.talks.map(talk=>`<p class="talk-item">${escape(talk)}</p>`).join('');
-  $('#awards').innerHTML=data.awards.map(award=>`<p>${escape(award)}</p>`).join('');
 
   const dialog=$('#detail-dialog');
   function showDetail(title,html,kicker='PROJECT NOTES') {

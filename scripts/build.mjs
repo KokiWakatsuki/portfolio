@@ -2,6 +2,8 @@ import {readFileSync,writeFileSync,readdirSync,mkdirSync,rmSync,cpSync} from 'no
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import {renderHome,renderProject} from './render-content.mjs';
+import {metadata,sitemap,siteUrl} from './seo.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const output=resolve(root,'dist');
 const read=name=>readFileSync(resolve(root,name),'utf8');
@@ -20,6 +22,10 @@ cpSync(resolve(root,'public'),output,{recursive:true});cpSync(resolve(root,'src/
 mkdirSync(resolve(output,'styles'));writeFileSync(resolve(output,'styles/site.css'),css);
 writeFileSync(resolve(output,'js/site-data.js'),'window.PORTFOLIO_CONTENT = '+JSON.stringify(data)+';\n');
 writeFileSync(resolve(output,'js/problem-data.js'),'window.ENGINE_EXAMPLES = '+JSON.stringify(JSON.parse(read('content/problem-examples.json')))+';\n');
-writeFileSync(resolve(output,'index.html'),render(read('src/index.html'),shared));
-for(const project of data.projects){const folder=resolve(output,'projects',project.id);mkdirSync(folder,{recursive:true});writeFileSync(resolve(folder,'index.html'),render(read('src/project.html'),{...shared,ID:project.id,TITLE:project.detailTitle,YEAR:project.year}));}
+const withMetadata=(source,project)=>source.replace('{{SEO_METADATA}}',()=>metadata(project));
+writeFileSync(resolve(output,'index.html'),renderHome(render(withMetadata(read('src/index.html')),shared),data));
+writeFileSync(resolve(output,'sitemap.xml'),sitemap(data));
+writeFileSync(resolve(output,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}sitemap.xml\n`);
+writeFileSync(resolve(output,'404.html'),render(read('src/404.html'),shared));
+for(const project of data.projects){const folder=resolve(output,'projects',project.id);mkdirSync(folder,{recursive:true});writeFileSync(resolve(folder,'index.html'),renderProject(render(withMetadata(read('src/project.html'),project),{...shared,ID:project.id,TITLE:project.detailTitle,YEAR:project.year}),project));}
 console.log('Built '+(data.projects.length+1)+' pages in dist/');
