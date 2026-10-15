@@ -5,7 +5,7 @@ const description='長岡技術科学大学大学院・若月耕紀のポート�
 const json=value=>JSON.stringify(value).replaceAll('<','\\u003c');
 export function metadata(project) {
   const url=project?`${siteUrl}projects/${project.id}/`:siteUrl;
-  const title=project?`${project.detailTitle} | 若月耕紀のポートフォリオ`:`${siteName} | 開発・研究・デザイン`;
+  const title=project?`${project.detailTitle} | 若月耕紀のポートフォリオ`:siteName;
   const summary=project?project.summaryParagraphs[0]:description;
   const graph=[{'@type':'WebSite','@id':siteUrl+'#website',name:siteName,alternateName:'Koki Wakatsuki — Portfolio',url:siteUrl,inLanguage:'ja',author:{'@id':siteUrl+'#person'}},{'@type':'Person','@id':siteUrl+'#person',name:'若月耕紀',alternateName:'Koki Wakatsuki',url:siteUrl,sameAs:['https://github.com/KokiWakatsuki','https://zenn.dev/k_wakatsuki','https://x.com/koki_wakatsuki']}];
   const structured=project?{'@context':'https://schema.org','@type':'WebPage',url,name:title,description:summary,inLanguage:'ja',isPartOf:{'@id':siteUrl+'#website'},author:{'@id':siteUrl+'#person'}}:{'@context':'https://schema.org','@graph':graph};
