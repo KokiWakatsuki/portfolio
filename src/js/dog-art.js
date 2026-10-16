@@ -17,7 +17,9 @@ export async function loadBreed(id){
  if(!cache.has(id))cache.set(id,(async()=>{
   const asset=new URL(`../assets/dogs/${id}.svg`,import.meta.url);asset.search=new URL(import.meta.url).search;
   const markup=await fetch(asset).then(r=>{if(!r.ok)throw Error(`${id}: vector drawing unavailable`);return r.text();});
-  return{type:'vector',markup:trimToLayer(markup,null),layers:{'hang-front':trimToLayer(markup,'hang-front'),'hang-back':trimToLayer(markup,'hang-back')},id};
+  // Modal layers are parsed only when a modal actually needs this breed.
+  let front,back;
+  return{type:'vector',markup:trimToLayer(markup,null),layers:{get 'hang-front'(){return front??=trimToLayer(markup,'hang-front');},get 'hang-back'(){return back??=trimToLayer(markup,'hang-back');}},id};
  })());
  return cache.get(id);
 }

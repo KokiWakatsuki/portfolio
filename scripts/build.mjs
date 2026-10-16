@@ -9,7 +9,7 @@ const output=resolve(root,'dist');
 const read=name=>readFileSync(resolve(root,name),'utf8');
 const data=JSON.parse(read('content/site.json'));
 for(const project of data.projects){project.detail=read('content/'+project.detailFile);delete project.detailFile;}
-const cssFiles=["base.css","motion.css","project-media.css","layout.css","timeline.css","typography.css","problem-viewer.css","components.css","playground.css","companion.css"];
+const cssFiles=["fonts.css","base.css","motion.css","project-media.css","layout.css","timeline.css","typography.css","problem-viewer.css","components.css","playground.css","companion.css"];
 const css=cssFiles.map(name=>read('src/styles/'+name)).join('\n');
 const hash=createHash('sha256').update(JSON.stringify(data)).update(css).update(read('content/problem-examples.json')).update(read('src/js/vendor/budoux-ja.js'));
 for(const name of readdirSync(resolve(root,'src/js')).filter(name=>name.endsWith('.js')).sort())hash.update(read('src/js/'+name));
@@ -24,7 +24,8 @@ for(const name of readdirSync(resolve(output,'js')).filter(name=>name.endsWith('
 mkdirSync(resolve(output,'styles'));writeFileSync(resolve(output,'styles/site.css'),css);
 writeFileSync(resolve(output,'js/site-data.js'),'window.PORTFOLIO_CONTENT = '+JSON.stringify(data)+';\n');
 writeFileSync(resolve(output,'js/problem-data.js'),'window.ENGINE_EXAMPLES = '+JSON.stringify(JSON.parse(read('content/problem-examples.json')))+';\n');
-const withMetadata=(source,project)=>source.replace('{{SEO_METADATA}}',()=>metadata(project));
+const fontFiles=[...read('src/styles/fonts.css').matchAll(/url\(\.\.\/(assets\/fonts\/[^)]+)\)/g)].map(match=>match[1]);
+const withMetadata=(source,project)=>source.replace('{{SEO_METADATA}}',()=>metadata(project)+'\n'+fontFiles.filter(file=>!project||!file.includes('noto-serif')).map(file=>`<link rel="preload" href="${project?'../../':''}${file}" as="font" type="font/woff2" crossorigin>`).join('\n'));
 writeFileSync(resolve(output,'index.html'),renderHome(render(withMetadata(read('src/index.html')),shared),data));
 writeFileSync(resolve(output,'sitemap.xml'),sitemap(data));
 writeFileSync(resolve(output,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}sitemap.xml\n`);

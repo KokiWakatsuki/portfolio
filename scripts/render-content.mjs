@@ -16,11 +16,11 @@ function fill(source,id,content) {
 }
 export function renderHome(source,data) {
   const art = id => ({
-    mongene:`<div class="project-ui-shot"><img src="assets/mongene-engine-problem-ui.jpg" alt="図つきの問題を表示するモンジェネの出題画面" loading="lazy"></div><span class="art-caption">モンジェネの出題画面</span>`,
-    research:`<div class="project-ui-shot"><img src="assets/research-latent.png" alt="学習済みモデルの潜在空間。組織の型を色で示す研究図" loading="lazy"></div><span class="art-caption">学習済みモデルの潜在空間</span>`,
-    festival:`<div class="project-ui-shot"><img src="assets/gm-current-ui.jpg" alt="GM2の申請状況とお知らせ" loading="lazy"></div><span class="art-caption">GM2の申請状況とお知らせ</span>`,
+    mongene:`<div class="project-ui-shot"><img src="assets/mongene-engine-problem-ui.jpg" width="800" height="582" decoding="async" alt="図つきの問題を表示するモンジェネの出題画面" loading="lazy"></div><span class="art-caption">モンジェネの出題画面</span>`,
+    research:`<div class="project-ui-shot"><img src="assets/research-latent-preview.webp" alt="学習済みモデルの潜在空間。組織の型を色で示す研究図" width="1320" height="1051" loading="lazy" decoding="async"></div><span class="art-caption">学習済みモデルの潜在空間</span>`,
+    festival:`<div class="project-ui-shot"><img src="assets/gm-current-ui.jpg" width="1170" height="496" decoding="async" alt="GM2の申請状況とお知らせ" loading="lazy"></div><span class="art-caption">GM2の申請状況とお知らせ</span>`,
     etsuzan:`<div class="flow-art"><span>文章とプログラム</span><span class="flow-arrow" aria-hidden="true">↓</span><strong>LLM</strong><span class="flow-arrow" aria-hidden="true">↓</span><span>計算と作図</span><strong>PROGRAM</strong></div><span class="art-caption">問題生成の役割分担 / 概念図</span>`,
-    sporty:`<div class="project-ui-shot"><img src="assets/sporty-comparison-ui.jpg" alt="sportyの並列動画比較画面" loading="lazy"></div><span class="art-caption">2つの動画を並列比較</span>`
+    sporty:`<div class="project-ui-shot"><img src="assets/sporty-comparison-ui.jpg" width="1280" height="720" decoding="async" alt="sportyの並列動画比較画面" loading="lazy"></div><span class="art-caption">2つの動画を並列比較</span>`
   })[id];
   const projects=data.projects.map((project,index)=>{
     const visual=art(project.id);

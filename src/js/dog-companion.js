@@ -24,7 +24,7 @@ function scenePoint(p){return new DOMPoint(p.x,p.y).matrixTransform(scene.getScr
 function cursor(show,p=point){const visible=show&&(follow||returning)&&!dialog?.open;ball.hidden=!visible;document.body.classList.toggle('has-ball-cursor',visible&&!returning&&!keyboard);if(visible)ball.style.transform=`translate(${p.x}px,${p.y}px) scale(${returning?.home&&scene?12*scene.getScreenCTM().a/22:1})`;}
 function placeFollower(){const s=followWidth/1254;follower.style.width=follower.style.height=followWidth+'px';follower.style.transform=`translate(${position.x-650*s}px,${position.y-1148*s}px)`;actor.svg.style.transformOrigin=`${650/1254*100}% ${1148/1254*100}%`;actor.svg.style.transform=`scaleX(${facing})`;}
 function mouthPosition(p=position,sign=facing){const s=followWidth/1254;return{x:p.x-actor.mouthOffset.x*s*sign,y:p.y-actor.mouthOffset.y*s};}
-function syncStatus(){if(scene){scene.dataset.breed=breed.id;scene.dataset.state=actor.state;scene.dataset.fetching=String(!!fetching);scene.dataset.following=String(follow);scene.dataset.returning=String(!!returning);}follower.dataset.breed=breed.id;}
+function syncStatus(){if(scene){for(const [key,value] of Object.entries({breed:breed.id,state:actor.state,fetching:String(!!fetching),following:String(follow),returning:String(!!returning)}))if(scene.dataset[key]!==value)scene.dataset[key]=value;}if(follower.dataset.breed!==breed.id)follower.dataset.breed=breed.id;}
 function resetHome({stretch=false}={}){
  if(!actor)return;
  follow=false;returning=fetching=null;follower.hidden=true;cursor(false);wiggle.reset();summonAfter=performance.now()+1000;velocity={x:0,y:0};restAt=null;wakeUntil=0;

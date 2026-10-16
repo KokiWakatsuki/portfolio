@@ -2,6 +2,11 @@
   'use strict';
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const assets = () => document.body.dataset.assetBase || 'assets/';
+  const previews={
+    'research-latent.png':['research-latent-detail.webp',1760,1401],
+    'research-simulation.png':['research-simulation-preview.webp',1600,347]
+  };
+  const imageSource=file=>assets()+(previews[file]?.[0]||file);
   const screens = {
     mongene: {
       problems: ['出題','mongene-engine-problem-ui.jpg','本物のエンジン出力を表示するモンジェネの出題画面','単元別に問題を出題する画面です。問題と図は問題生成エンジンの出力です。'],
@@ -25,14 +30,15 @@
     const choices=screens[id];
     if(!choices) return '';
     const [key,screen]=Object.entries(choices)[0];
-    return `<figure class="project-detail-screen" data-ui-gallery="${id}">${Object.keys(choices).length>1?`<div class="ui-shot-switch" role="group" aria-label="${id==='research'?'研究の図':'アプリの画面'}">${Object.entries(choices).map(([name,s])=>`<button type="button" data-ui-view="${name}" aria-pressed="${name===key}">${s[0]}</button>`).join('')}</div>`:''}<a href="${assets()+screen[1]}" target="_blank" rel="noreferrer" class="ui-browser-frame" data-ui-enlarge><img src="${assets()+screen[1]}" alt="${escape(screen[2])}"></a><figcaption><span data-ui-caption>${escape(screen[3])}</span><a href="${assets()+screen[1]}" target="_blank" rel="noreferrer" data-ui-enlarge>画像を大きく見る ↗</a></figcaption></figure>`;
+    return `<figure class="project-detail-screen" data-ui-gallery="${id}">${Object.keys(choices).length>1?`<div class="ui-shot-switch" role="group" aria-label="${id==='research'?'研究の図':'アプリの画面'}">${Object.entries(choices).map(([name,s])=>`<button type="button" data-ui-view="${name}" aria-pressed="${name===key}">${s[0]}</button>`).join('')}</div>`:''}<a href="${assets()+screen[1]}" target="_blank" rel="noreferrer" class="ui-browser-frame" data-ui-enlarge><img src="${imageSource(screen[1])}" alt="${escape(screen[2])}" decoding="async"${previews[screen[1]]?` width="${previews[screen[1]][1]}" height="${previews[screen[1]][2]}"`:""}></a><figcaption><span data-ui-caption>${escape(screen[3])}</span><a href="${assets()+screen[1]}" target="_blank" rel="noreferrer" data-ui-enlarge>画像を大きく見る ↗</a></figcaption></figure>`;
   };
   window.decisionMarkup = () => `<figure id="problem-generation-flow" class="decision-study" data-decision-mode="after"><div class="ui-shot-switch" role="group" aria-label="問題生成の方式"><button type="button" data-decision="before" aria-pressed="false">ETSUZAN2025</button><button type="button" data-decision="after" aria-pressed="true">現在の設計</button></div><div class="decision-stages"><section class="decision-preparation" aria-label="出題前の準備"><p class="decision-phase">出題前の準備</p><div class="decision-node decision-ai"><span>AI</span><strong>問題の設計図を作る</strong><small>条件・数値の範囲・解き方など</small></div><span class="decision-arrow" aria-hidden="true">↓</span><div class="decision-node"><span>人による確認</span><strong>数学・教育の内容を確認する</strong></div><span class="decision-arrow" aria-hidden="true">↓</span><div class="decision-node"><span>保存</span><strong>確認した設計図を保存する</strong></div></section><section class="decision-execution" aria-label="出題時"><p class="decision-phase">出題時</p><div class="decision-node"><span>入力</span><strong data-decision-field="input">単元・形式・難易度</strong></div><span class="decision-arrow" aria-hidden="true">↓</span><div class="decision-node decision-engine"><span data-decision-field="engineLabel">エンジン</span><strong data-decision-field="engine">設計図から問題を組み立てる</strong></div><span class="decision-arrow" aria-hidden="true">↓</span><div class="decision-node"><span>出力</span><strong data-decision-field="output">問題文・解答・解説・図</strong></div></section></div><figcaption data-decision-field="caption">AIで作った設計図の内容を確認し、出題時は保存した設計図からプログラムが問題を生成します。答案の採点にはAIを使います。</figcaption></figure>`;
   window.initializeProjectGalleries = container => {
     container.querySelectorAll('[data-ui-gallery]').forEach(figure => {
       figure.querySelectorAll('[data-ui-view]').forEach(button => button.addEventListener('click', () => {
         const [,file,alt,caption]=screens[figure.dataset.uiGallery][button.dataset.uiView];
-        const image=figure.querySelector('img');image.src=assets()+file;image.alt=alt;
+        const image=figure.querySelector('img');image.src=imageSource(file);image.alt=alt;
+        if(previews[file]){image.width=previews[file][1];image.height=previews[file][2];}
         figure.querySelector('[data-ui-caption]').textContent=caption;
         figure.querySelectorAll('[data-ui-enlarge]').forEach(link=>link.href=assets()+file);
         figure.querySelectorAll('[data-ui-view]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
