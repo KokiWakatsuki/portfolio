@@ -55,4 +55,4 @@ Google Search Consoleでは `wakatsuki.app` のドメインプロパティを使
 
 ## 使用素材
 
-犬のイラストと動作はSVG・JavaScriptによるものです。文節の判定にはGoogle BudouX、GitHub・X・ZennのアイコンにはSimple Iconsを使用しています。ライセンスは `licenses/` を参照してください。制作物の画像・文章・デザインの権利はそれぞれの権利者に帰属します。
+犬のイラストと動作はSVG・JavaScriptによるものです。`public/assets/dogs/` の8犬種を、`src/js/dog-art.js` と `dog-animator.js` で読み込んで動かし、`dog-companion.js` がボール遊び・追従・モーダルを制御します。同じページの遊び場と追従には同じ犬を使い、再読み込みでは前回と異なる犬を選びます。動きをオフにした場合と端末で動きを減らす設定の場合は静止画で表示します。文節の判定にはGoogle BudouX、GitHub・X・ZennのアイコンにはSimple Iconsを使用しています。ライセンスは `licenses/` を参照してください。制作物の画像・文章・デザインの権利はそれぞれの権利者に帰属します。
